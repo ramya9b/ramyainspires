@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ramya Inspires — AI Prompts for Indian Professionals</title>
-  <meta name="description" content="Expert AI prompts and ready-made presentations for Indian teachers, speakers and professionals. In English, Telugu and Kannada. By Ramya, ICI Speaker & QA Architect, Bengaluru." />
+  <title>SU@Ramiya Inspires — AI Prompts for Indian Professionals</title>
+  <meta name="description" content="SU@Ramiya Inspires — Expert AI prompts and ready-made presentations for Indian teachers, speakers and professionals. In English, Telugu and Kannada. By Ramya, ICI Speaker & QA Architect, Bengaluru." />
   <meta name="keywords" content="AI prompts India, PPT prompts teachers, voice modulation workshop, Telugu AI prompts, Kannada prompts, ICI speaker resources" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
   <style>
+    /* ─── SOCIAL LINKS ──────────────────────────────────────── */
+    /* WhatsApp: +91 9945411489 */
+    /* Instagram: @suramya.inspires */
+    /* LinkedIn: linkedin.com/in/ramya-bangalore-04b2bb166 */
+
     /* ─── DESIGN TOKENS ─────────────────────────────────────── */
     :root {
       --e0: #051A0F;   /* deepest emerald — nav bg */
@@ -647,6 +652,195 @@
       width: 100%;
     }
 
+    /* ─── FLOATING WHATSAPP ─────────────────────────────────── */
+    .wa-float {
+      position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 999;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+    .wa-tooltip {
+      position: absolute; right: 68px; top: 50%; transform: translateY(-50%);
+      background: var(--e0); color: var(--mint);
+      font-size: 0.78rem; font-weight: 500;
+      padding: 0.4rem 0.85rem; border-radius: 8px;
+      white-space: nowrap; pointer-events: none;
+      opacity: 0; transition: opacity 0.2s;
+      border: 1px solid rgba(200,240,216,0.15);
+    }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    /* ─── PROFESSION CARDS ───────────────────────────────────── */
+    .profession-sec { background: var(--cream); }
+    .prof-intro {
+      font-size: 0.95rem; color: var(--muted);
+      max-width: 560px; line-height: 1.75; margin-bottom: 2.5rem;
+    }
+    .prof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem; margin-bottom: 1.5rem;
+    }
+    .prof-card {
+      background: var(--white);
+      border: 1.5px solid rgba(10,48,32,0.08);
+      border-radius: var(--radius); padding: 1.5rem;
+      cursor: pointer; transition: all 0.2s;
+      position: relative; overflow: hidden;
+      text-align: center;
+    }
+    .prof-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: var(--g1); transform: scaleX(0);
+      transition: transform 0.2s; transform-origin: left;
+    }
+    .prof-card:hover { border-color: var(--e3); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .prof-card:hover::before { transform: scaleX(1); }
+    .prof-card.coming { opacity: 0.55; cursor: default; }
+    .prof-card.coming:hover { transform: none; box-shadow: none; border-color: rgba(10,48,32,0.08); }
+    .prof-card.coming::before { display: none; }
+    .prof-emoji { font-size: 2.2rem; margin-bottom: 0.75rem; }
+    .prof-name { font-size: 1rem; font-weight: 600; color: var(--e2); margin-bottom: 0.35rem; }
+    .prof-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.75rem; }
+    .prof-saves { font-size: 0.75rem; font-weight: 600; color: var(--green-ok); }
+    .prof-badge {
+      position: absolute; top: 0.75rem; right: 0.75rem;
+      font-size: 0.6rem; font-weight: 700; padding: 0.15rem 0.5rem;
+      border-radius: 5px; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .badge-live { background: rgba(22,163,74,0.12); color: var(--green-ok); }
+    .badge-soon { background: rgba(196,152,60,0.12); color: var(--g1); }
+
+    /* ─── EMAIL CAPTURE ──────────────────────────────────────── */
+    .email-sec {
+      background: linear-gradient(150deg, var(--e1) 0%, var(--e2) 100%);
+    }
+    .email-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center; margin-top: 2.5rem;
+    }
+    .email-left h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--white); margin-bottom: 0.75rem; line-height: 1.2;
+    }
+    .email-left p { font-size: 0.9rem; color: rgba(200,240,216,0.7); line-height: 1.75; margin-bottom: 1.25rem; }
+    .free-pack-includes { list-style: none; }
+    .free-pack-includes li {
+      font-size: 0.85rem; color: rgba(200,240,216,0.8);
+      padding: 0.3rem 0; display: flex; gap: 0.6rem; align-items: center;
+    }
+    .free-pack-includes li::before { content: '✦'; color: var(--g2); font-size: 0.65rem; flex-shrink: 0; }
+    .email-right {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200,240,216,0.12);
+      border-radius: 18px; padding: 2rem;
+    }
+    .email-form-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--g2); margin-bottom: 1rem;
+    }
+    .email-field {
+      width: 100%; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(200,240,216,0.2);
+      border-radius: 9px; padding: 0.8rem 1rem;
+      font-size: 0.9rem; color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 0.75rem; outline: none;
+      transition: border-color 0.2s;
+    }
+    .email-field::placeholder { color: rgba(200,240,216,0.35); }
+    .email-field:focus { border-color: var(--g1); }
+    .email-submit {
+      width: 100%; background: var(--g1); color: var(--e0);
+      padding: 0.9rem; border-radius: 9px;
+      font-size: 0.9rem; font-weight: 700; border: none;
+      cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+    }
+    .email-submit:hover { background: var(--g2); }
+    .email-submit.sent { background: var(--green-ok); color: white; }
+    .email-privacy {
+      font-size: 0.72rem; color: rgba(200,240,216,0.35);
+      text-align: center; margin-top: 0.6rem; line-height: 1.5;
+    }
+
+    /* ─── AVATAR IMPROVEMENT ─────────────────────────────────── */
+    .about-avatar-ring {
+      width: 180px; height: 220px;
+      background: linear-gradient(135deg, var(--e2), var(--e3));
+      border: 2px solid var(--g1);
+      border-radius: 14px; flex-shrink: 0;
+      box-shadow: 0 0 32px rgba(196,152,60,0.2);
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+    }
+    .avatar-glow {
+      position: absolute; bottom: -20px; left: 50%;
+      transform: translateX(-50%);
+      width: 140px; height: 140px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,152,60,0.15) 0%, transparent 70%);
+    }
+    .avatar-letter {
+      font-family: 'DM Serif Display', serif;
+      font-size: 5rem; color: var(--g2);
+      line-height: 1; position: relative; z-index: 1;
+    }
+    .avatar-name-tag {
+      position: relative; z-index: 1;
+      font-size: 0.7rem; font-weight: 600;
+      color: rgba(200,240,216,0.5);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+    .avatar-frame {
+      position: absolute; top: 8px; left: 8px; right: 8px; bottom: 8px;
+      border: 1px solid rgba(196,152,60,0.15); border-radius: 10px;
+      pointer-events: none;
+    }
+
+    /* ─── SOCIAL LINKS ───────────────────────────────────────── */
+    .social-row {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+    .social-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 1rem; border-radius: 8px;
+      font-size: 0.82rem; font-weight: 600;
+      border: 1px solid rgba(200,240,216,0.15);
+      background: rgba(255,255,255,0.04);
+      color: rgba(200,240,216,0.75);
+      transition: all 0.2s; text-decoration: none;
+    }
+    .social-btn:hover { border-color: var(--g1); color: var(--g2); background: rgba(196,152,60,0.08); }
+    .social-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+    .footer-social { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .footer-social a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8rem; color: rgba(200,240,216,0.4);
+      transition: color 0.2s; text-decoration: none;
+    }
+    .footer-social a:hover { color: var(--g1); }
+    .footer-social svg { width: 14px; height: 14px; fill: currentColor; }
+
+    /* ─── RESPONSIVE ADDITIONS ───────────────────────────────── */
+    @media (max-width: 900px) {
+      .prof-grid { grid-template-columns: 1fr 1fr; }
+      .email-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .prof-grid { grid-template-columns: 1fr; }
+      .wa-float { bottom: 1.25rem; right: 1.25rem; }
+    }
+
     /* ─── ANIMATIONS ─────────────────────────────────────────── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -699,10 +893,23 @@
 
 <body class="lang-en">
 
+  <!-- ── FLOATING WHATSAPP ─────────────────────────────────────── -->
+  <a class="wa-float" href="https://wa.me/919945411489?text=Hi%20Ramya!%20I%20saw%20your%20website%20and%20I%20am%20interested%20in%20your%20AI%20prompt%20packs." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="wa-tooltip">Chat with Ramya</span>
+  </a>
+
   <!-- ── NAV ──────────────────────────────────────────────────── -->
   <nav class="nav">
-    <div class="nav-logo">Ramya Inspires</div>
+    <div class="nav-logo">SU<span style="color:var(--mint)">@</span>Ramiya Inspires</div>
     <div class="nav-center">
+      <a href="#professions" class="nav-link">
+        <span data-en>Professions</span>
+        <span data-te>వృత్తులు</span>
+        <span data-kn>ವೃತ್ತಿಗಳು</span>
+      </a>
       <a href="#sample" class="nav-link">
         <span data-en>Free Sample</span>
         <span data-te>ఉచిత నమూనా</span>
@@ -873,6 +1080,147 @@
             <span data-kn>ಸಂಪೂರ್ಣ ಕಿಟ್ ಬೆಲೆ</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROFESSION SELECTOR ───────────────────────────────────── -->
+  <section class="section profession-sec" id="professions">
+    <div class="container">
+      <div class="sec-eye">Who Is This For</div>
+      <h2 class="sec-h reveal">
+        <span data-en>Find Your Profession. Find Your Prompts.</span>
+        <span data-te>మీ వృత్తిని కనుగొనండి. మీ ప్రాంప్ట్లు కనుగొనండి.</span>
+        <span data-kn>ನಿಮ್ಮ ವೃತ್ತಿ ಕಂಡುಕೊಳ್ಳಿ. ನಿಮ್ಮ ಪ್ರಾಂಪ್ಟ್ ಕಂಡುಕೊಳ್ಳಿ.</span>
+      </h2>
+      <p class="prof-intro reveal">
+        <span data-en>Every profession has different problems. Every prompt pack here is built for one specific person — not everyone. Click your profession to see what is made for you.</span>
+        <span data-te>ప్రతి వృత్తికి వేర్వేరు సమస్యలు ఉంటాయి. ఇక్కడ ప్రతి ప్రాంప్ట్ ప్యాక్ ఒక నిర్దిష్ట వ్యక్తి కోసం నిర్మించబడింది.</span>
+        <span data-kn>ಪ್ರತಿ ವೃತ್ತಿಗೆ ವಿಭಿನ್ನ ಸಮಸ್ಯೆಗಳಿವೆ. ಇಲ್ಲಿ ಪ್ರತಿ ಪ್ರಾಂಪ್ಟ್ ಪ್ಯಾಕ್ ಒಬ್ಬ ನಿರ್ದಿಷ್ಟ ವ್ಯಕ್ತಿಗಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ.</span>
+      </p>
+
+      <div class="prof-grid">
+
+        <div class="prof-card reveal" onclick="document.getElementById('product').scrollIntoView({behavior:'smooth'})">
+          <span class="prof-badge badge-live">Live Now</span>
+          <div class="prof-emoji">👩‍🏫</div>
+          <div class="prof-name">
+            <span data-en>Teachers & Educators</span>
+            <span data-te>ఉపాధ్యాయులు</span>
+            <span data-kn>ಶಿಕ್ಷಕರು</span>
+          </div>
+          <div class="prof-desc">
+            <span data-en>Complete workshop presentations, lesson plans, and student activities — ready in minutes.</span>
+            <span data-te>పూర్తి వర్క్‌షాప్ ప్రదర్శనలు, పాఠ్య ప్రణాళికలు — నిమిషాల్లో సిద్ధంగా.</span>
+            <span data-kn>ಸಂಪೂರ್ಣ ವರ್ಕ್‌ಶಾಪ್ ಪ್ರಸ್ತುತಿಗಳು, ಪಾಠ ಯೋಜನೆಗಳು — ನಿಮಿಷಗಳಲ್ಲಿ ಸಿದ್ಧ.</span>
+          </div>
+          <div class="prof-saves">
+            <span data-en>✦ Saves 15+ hours per workshop</span>
+            <span data-te>✦ ప్రతి వర్క్‌షాప్‌కు 15+ గంటలు ఆదా</span>
+            <span data-kn>✦ ಪ್ರತಿ ವರ್ಕ್‌ಶಾಪ್‌ಗೆ 15+ ಗಂಟೆ ಉಳಿತಾಯ</span>
+          </div>
+        </div>
+
+        <div class="prof-card reveal" onclick="document.getElementById('product').scrollIntoView({behavior:'smooth'})">
+          <span class="prof-badge badge-live">Live Now</span>
+          <div class="prof-emoji">🎤</div>
+          <div class="prof-name">
+            <span data-en>Speakers & ICI Members</span>
+            <span data-te>స్పీకర్లు & ICI సభ్యులు</span>
+            <span data-kn>ಸ್ಪೀಕರ್‌ಗಳು & ICI ಸದಸ್ಯರು</span>
+          </div>
+          <div class="prof-desc">
+            <span data-en>Speech scripts, presentation decks, and stage confidence tools — built by an ICI speaker for ICI speakers.</span>
+            <span data-te>ప్రసంగ స్క్రిప్ట్లు, ప్రదర్శన డెక్‌లు — ICI స్పీకర్ ద్వారా ICI స్పీకర్లకు.</span>
+            <span data-kn>ಭಾಷಣ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು, ಪ್ರಸ್ತುತಿ ಡೆಕ್‌ಗಳು — ICI ಸ್ಪೀಕರ್‌ಗಳಿಗಾಗಿ.</span>
+          </div>
+          <div class="prof-saves">
+            <span data-en>✦ Saves 10+ hours of speech prep</span>
+            <span data-te>✦ ప్రసంగ సన్నాహానికి 10+ గంటలు ఆదా</span>
+            <span data-kn>✦ ಭಾಷಣ ತಯಾರಿಗೆ 10+ ಗಂಟೆ ಉಳಿತಾಯ</span>
+          </div>
+        </div>
+
+        <div class="prof-card coming reveal">
+          <span class="prof-badge badge-soon">Coming Soon</span>
+          <div class="prof-emoji">🛡️</div>
+          <div class="prof-name">
+            <span data-en>LIC & Insurance Agents</span>
+            <span data-te>LIC & బీమా ఏజెంట్లు</span>
+            <span data-kn>LIC & ವಿಮಾ ಏಜೆಂಟ್‌ಗಳು</span>
+          </div>
+          <div class="prof-desc">
+            <span data-en>Sales conversation scripts, objection handling guides, and WhatsApp follow-up templates in Telugu & Kannada.</span>
+            <span data-te>అమ్మకాల సంభాషణ స్క్రిప్ట్లు, అభ్యంతర నిర్వహణ గైడ్లు.</span>
+            <span data-kn>ಮಾರಾಟ ಸಂಭಾಷಣೆ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು, ಆಕ್ಷೇಪಣೆ ನಿರ್ವಹಣೆ ಮಾರ್ಗದರ್ಶಿಗಳು.</span>
+          </div>
+          <div class="prof-saves">
+            <span data-en>✦ Being built now — notify me</span>
+            <span data-te>✦ ఇప్పుడు నిర్మించబడుతోంది</span>
+            <span data-kn>✦ ಈಗ ನಿರ್ಮಿಸಲಾಗುತ್ತಿದೆ</span>
+          </div>
+        </div>
+
+        <div class="prof-card coming reveal">
+          <span class="prof-badge badge-soon">Coming Soon</span>
+          <div class="prof-emoji">💼</div>
+          <div class="prof-name">
+            <span data-en>Sales Professionals</span>
+            <span data-te>విక్రయ నిపుణులు</span>
+            <span data-kn>ಮಾರಾಟ ವೃತ್ತಿಪರರು</span>
+          </div>
+          <div class="prof-desc">
+            <span data-en>Cold call scripts, pitch presentations, and monthly target planning frameworks for Indian sales teams.</span>
+            <span data-te>కోల్డ్ కాల్ స్క్రిప్ట్లు, పిచ్ ప్రదర్శనలు.</span>
+            <span data-kn>ಕೋಲ್ಡ್ ಕಾಲ್ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು, ಪಿಚ್ ಪ್ರಸ್ತುತಿಗಳು.</span>
+          </div>
+          <div class="prof-saves">
+            <span data-en>✦ Being built now — notify me</span>
+            <span data-te>✦ ఇప్పుడు నిర్మించబడుతోంది</span>
+            <span data-kn>✦ ಈಗ ನಿರ್ಮಿಸಲಾಗುತ್ತಿದೆ</span>
+          </div>
+        </div>
+
+        <div class="prof-card coming reveal">
+          <span class="prof-badge badge-soon">Coming Soon</span>
+          <div class="prof-emoji">🌸</div>
+          <div class="prof-name">
+            <span data-en>Women Entrepreneurs</span>
+            <span data-te>మహిళా వ్యాపారవేత్తలు</span>
+            <span data-kn>ಮಹಿಳಾ ಉದ್ಯಮಿಗಳು</span>
+          </div>
+          <div class="prof-desc">
+            <span data-en>Instagram content plans, business pitch scripts, and confidence workshop prompts — in Telugu & Kannada.</span>
+            <span data-te>Instagram కంటెంట్ ప్రణాళికలు, వ్యాపార పిచ్ స్క్రిప్ట్లు.</span>
+            <span data-kn>Instagram ವಿಷಯ ಯೋಜನೆಗಳು, ವ್ಯಾಪಾರ ಪಿಚ್ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು.</span>
+          </div>
+          <div class="prof-saves">
+            <span data-en>✦ Being built now — notify me</span>
+            <span data-te>✦ ఇప్పుడు నిర్మించబడుతోంది</span>
+            <span data-kn>✦ ಈಗ ನಿರ್ಮಿಸಲಾಗುತ್ತಿದೆ</span>
+          </div>
+        </div>
+
+        <div class="prof-card coming reveal">
+          <span class="prof-badge badge-soon">Coming Soon</span>
+          <div class="prof-emoji">🏢</div>
+          <div class="prof-name">
+            <span data-en>Corporate Trainers</span>
+            <span data-te>కార్పొరేట్ శిక్షకులు</span>
+            <span data-kn>ಕಾರ್ಪೊರೇಟ್ ತರಬೇತುದಾರರು</span>
+          </div>
+          <div class="prof-desc">
+            <span data-en>Full-day training modules, engagement activities, and icebreaker scripts for Indian corporate audiences.</span>
+            <span data-te>పూర్తి రోజు శిక్షణ మాడ్యూల్లు, నిమగ్నత కార్యకలాపాలు.</span>
+            <span data-kn>ಪೂರ್ಣ ದಿನದ ತರಬೇತಿ ಮಾಡ್ಯೂಲ್‌ಗಳು, ತೊಡಗಿಸಿಕೊಳ್ಳುವ ಚಟುವಟಿಕೆಗಳು.</span>
+          </div>
+          <div class="prof-saves">
+            <span data-en>✦ Being built now — notify me</span>
+            <span data-te>✦ ఇప్పుడు నిర్మించబడుతోంది</span>
+            <span data-kn>✦ ಈಗ ನಿರ್ಮಿಸಲಾಗುತ್ತಿದೆ</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1266,6 +1614,76 @@
     </div>
   </section>
 
+  <!-- ── EMAIL CAPTURE ─────────────────────────────────────────── -->
+  <section class="section email-sec dark-sec" id="freegift">
+    <div class="container">
+      <div class="sec-eye">Free Gift — No Strings Attached</div>
+      <div class="email-grid">
+        <div class="email-left">
+          <h3>
+            <span data-en>Get 5 Free Prompts<br/>Delivered Instantly</span>
+            <span data-te>5 ఉచిత ప్రాంప్ట్లు<br/>తక్షణంగా పొందండి</span>
+            <span data-kn>5 ಉಚಿತ ಪ್ರಾಂಪ್ಟ್‌ಗಳು<br/>ತಕ್ಷಣ ಪಡೆಯಿರಿ</span>
+          </h3>
+          <p>
+            <span data-en>Enter your name and email. Get 5 of our best AI prompts — one for each profession — sent directly to your inbox. No spam. Just prompts that actually work.</span>
+            <span data-te>మీ పేరు మరియు ఇమెయిల్ నమోదు చేయండి. 5 ఉత్తమ AI ప్రాంప్ట్లు మీ ఇన్‌బాక్స్‌కు నేరుగా పంపబడతాయి.</span>
+            <span data-kn>ನಿಮ್ಮ ಹೆಸರು ಮತ್ತು ಇಮೇಲ್ ನಮೂದಿಸಿ. 5 ಉತ್ತಮ AI ಪ್ರಾಂಪ್ಟ್‌ಗಳು ನಿಮ್ಮ ಇನ್‌ಬಾಕ್ಸ್‌ಗೆ ನೇರವಾಗಿ ಕಳುಹಿಸಲಾಗುತ್ತದೆ.</span>
+          </p>
+          <ul class="free-pack-includes">
+            <li>
+              <span data-en>1 PPT prompt for Teachers</span>
+              <span data-te>ఉపాధ్యాయులకు 1 PPT ప్రాంప్ట్</span>
+              <span data-kn>ಶಿಕ್ಷಕರಿಗೆ 1 PPT ಪ್ರಾಂಪ್ಟ್</span>
+            </li>
+            <li>
+              <span data-en>1 Speech prompt for ICI Speakers</span>
+              <span data-te>ICI స్పీకర్లకు 1 ప్రసంగ ప్రాంప్ట్</span>
+              <span data-kn>ICI ಸ್ಪೀಕರ್‌ಗಳಿಗೆ 1 ಭಾಷಣ ಪ್ರಾಂಪ್ಟ್</span>
+            </li>
+            <li>
+              <span data-en>1 Sales script prompt for LIC Agents</span>
+              <span data-te>LIC ఏజెంట్లకు 1 విక్రయ స్క్రిప్ట్</span>
+              <span data-kn>LIC ಏಜೆಂಟ್‌ಗಳಿಗೆ 1 ಮಾರಾಟ ಸ್ಕ್ರಿಪ್ಟ್</span>
+            </li>
+            <li>
+              <span data-en>1 Instagram caption prompt for Women Entrepreneurs</span>
+              <span data-te>మహిళా వ్యాపారవేత్తలకు 1 Instagram క్యాప్షన్</span>
+              <span data-kn>ಮಹಿಳಾ ಉದ್ಯಮಿಗಳಿಗೆ 1 Instagram ಕ್ಯಾಪ್ಷನ್</span>
+            </li>
+            <li>
+              <span data-en>1 Training module prompt for Corporate Trainers</span>
+              <span data-te>కార్పొరేట్ శిక్షకులకు 1 శిక్షణ మాడ్యూల్</span>
+              <span data-kn>ಕಾರ್ಪೊರೇಟ್ ತರಬೇತುದಾರರಿಗೆ 1 ತರಬೇತಿ ಮಾಡ್ಯೂಲ್</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="email-right reveal">
+          <div class="email-form-label">
+            <span data-en>Get Your Free Prompts Now</span>
+            <span data-te>మీ ఉచిత ప్రాంప్ట్లు ఇప్పుడు పొందండి</span>
+            <span data-kn>ನಿಮ್ಮ ಉಚಿತ ಪ್ರಾಂಪ್ಟ್‌ಗಳು ಈಗ ಪಡೆಯಿರಿ</span>
+          </div>
+          <input class="email-field" type="text" id="sub-name" placeholder="Your name" autocomplete="name"/>
+          <input class="email-field" type="email" id="sub-email" placeholder="Your email address" autocomplete="email"/>
+          <input class="email-field" type="tel" id="sub-whatsapp" placeholder="WhatsApp number (optional)" autocomplete="tel"/>
+          <button class="email-submit" id="subBtn" onclick="handleSubscribe()">
+            🎁
+            <span data-en>Send Me the Free Prompts</span>
+            <span data-te>ఉచిత ప్రాంప్ట్లు పంపండి</span>
+            <span data-kn>ಉಚಿತ ಪ್ರಾಂಪ್ಟ್‌ಗಳು ಕಳುಹಿಸಿ</span>
+          </button>
+          <div class="email-privacy">
+            <span data-en>No spam. Unsubscribe anytime. Your details stay with Ramya only.</span>
+            <span data-te>స్పామ్ లేదు. మీ వివరాలు రమ్యతో మాత్రమే ఉంటాయి.</span>
+            <span data-kn>ಸ್ಪ್ಯಾಮ್ ಇಲ್ಲ. ನಿಮ್ಮ ವಿವರಗಳು ರಮ್ಯಳ ಬಳಿ ಮಾತ್ರ ಇರುತ್ತದೆ.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── ABOUT ───────────────────────────────────────────────────── -->
   <section class="section about-sec dark-sec" id="about">
     <div class="container">
@@ -1276,14 +1694,12 @@
       </div>
 
       <div class="about-grid">
-        <div style="position:relative">
-          <div class="about-photo">
-            <div class="about-initial">R</div>
-            <div class="about-photo-note">
-              <span data-en>Your photo goes here</span>
-              <span data-te>మీ ఫోటో ఇక్కడ ఉంటుంది</span>
-              <span data-kn>ನಿಮ್ಮ ಫೋಟೋ ಇಲ್ಲಿ</span>
-            </div>
+        <div style="position:relative;flex-shrink:0">
+          <div class="about-avatar-ring">
+            <div class="avatar-frame"></div>
+            <div class="avatar-glow"></div>
+            <div class="avatar-letter">R</div>
+            <div class="avatar-name-tag">SuRamya</div>
           </div>
           <div class="about-badge">
             ICI Speaker<br/>QA Architect
@@ -1317,6 +1733,24 @@
             <span class="cred-pill">Telugu · Kannada · English</span>
             <span class="cred-pill">Bengaluru, India</span>
           </div>
+
+          <div class="social-row">
+            <!-- Instagram -->
+            <a class="social-btn" href="https://instagram.com/suramya.inspires" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @suramya.inspires
+            </a>
+            <!-- LinkedIn -->
+            <a class="social-btn" href="https://linkedin.com/in/ramya-bangalore-04b2bb166" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <!-- WhatsApp -->
+            <a class="social-btn" href="https://wa.me/919945411489?text=Hi%20Ramya!%20I%20want%20to%20know%20more%20about%20your%20AI%20prompt%20packs." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1325,7 +1759,7 @@
   <!-- ── FOOTER ──────────────────────────────────────────────────── -->
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-logo">Ramya Inspires</div>
+      <div class="footer-logo">SU<span style="color:var(--mint)">@</span>Ramiya Inspires</div>
       <div class="footer-links">
         <a href="#sample">
           <span data-en>Free Sample</span>
@@ -1348,8 +1782,22 @@
           <span data-kn>ರಮ್ಯ ಬಗ್ಗೆ</span>
         </a>
       </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/suramya.inspires" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          @suramya.inspires
+        </a>
+        <a href="https://linkedin.com/in/ramya-bangalore-04b2bb166" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://wa.me/919945411489" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          +91 99454 11489
+        </a>
+      </div>
       <div class="footer-copy">
-        © 2026 Ramya Inspires · ramyainspires.com · Built with honesty for Indian professionals · Telugu · Kannada · English
+        © 2026 SU@Ramiya Inspires · ramyainspires.com · Built with honesty for Indian professionals · Telugu · Kannada · English
       </div>
     </div>
   </footer>
@@ -1428,6 +1876,39 @@ Make it so memorable that every teacher wants to try it with their students the 
     /* ─── INSTAMOJO PLACEHOLDER ───────────────────────────────── */
     function showInstamojo() {
       alert('Payment link coming soon! To buy today, WhatsApp Ramya directly. Contact details in the About section.');
+    }
+
+    /* ─── EMAIL SUBSCRIBE ─────────────────────────────────────── */
+    function handleSubscribe() {
+      const name = document.getElementById('sub-name').value.trim();
+      const email = document.getElementById('sub-email').value.trim();
+      const btn = document.getElementById('subBtn');
+
+      if (!name) { alert('Please enter your name.'); return; }
+      if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+
+      // Build WhatsApp message to Ramya with subscriber details
+      const wa = document.getElementById('sub-whatsapp').value.trim();
+      const msg = encodeURIComponent(
+        `New subscriber for free prompts!\nName: ${name}\nEmail: ${email}${wa ? '\nWhatsApp: ' + wa : ''}`
+      );
+
+      btn.classList.add('sent');
+      btn.innerHTML = '✓ Thank you! Check your WhatsApp / email shortly.';
+
+      // Open WhatsApp to notify Ramya
+      setTimeout(() => {
+        window.open(`https://wa.me/919945411489?text=${msg}`, '_blank');
+      }, 800);
+
+      // Reset after 5s
+      setTimeout(() => {
+        btn.classList.remove('sent');
+        btn.innerHTML = '🎁 <span data-en>Send Me the Free Prompts</span>';
+        document.getElementById('sub-name').value = '';
+        document.getElementById('sub-email').value = '';
+        document.getElementById('sub-whatsapp').value = '';
+      }, 5000);
     }
 
     /* ─── SCROLL REVEAL ───────────────────────────────────────── */
