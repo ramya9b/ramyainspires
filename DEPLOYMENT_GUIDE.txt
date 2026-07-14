@@ -1,0 +1,245 @@
+# ramyainspires.com — Complete Deployment Guide
+# Follow these steps exactly. Takes about 20 minutes total.
+# Every step is written for someone who has done this before (mahabharatadecoded.com)
+
+=============================================================
+STEP 1 — CREATE GITHUB REPOSITORY (5 minutes)
+=============================================================
+
+1. Open github.com and log in as ramya9b
+
+2. Click the + icon (top right) → "New repository"
+
+3. Fill in:
+   Repository name: ramyainspires
+   Description: ramyainspires.com — AI Prompts for Indian Professionals
+   Visibility: Public  ← (required for free Cloudflare Pages)
+   DO NOT check "Add README" or any other option
+   Click: Create repository
+
+4. You will see an empty repo page with setup instructions.
+   Keep this tab open.
+
+=============================================================
+STEP 2 — UPLOAD FILES TO GITHUB (5 minutes)
+=============================================================
+
+You have 5 files to upload:
+  - index.html          (the website — most important)
+  - _redirects          (tells Cloudflare to serve index.html)
+  - _headers            (security headers)
+  - robots.txt          (for Google SEO)
+  - sitemap.xml         (for Google SEO)
+  - .gitignore          (keeps repo clean)
+
+METHOD A — Upload via GitHub website (easiest, no terminal needed):
+
+1. On your empty repo page, click "uploading an existing file"
+   (you will see this link in the middle of the page)
+
+2. Drag and drop ALL 6 files from the downloaded ZIP folder
+
+3. Scroll down to "Commit changes"
+   Write: "Initial website launch — ramyainspires.com"
+   Click: "Commit changes"
+
+4. Done. Your files are now on GitHub.
+
+METHOD B — If you prefer terminal (Git commands):
+
+  git clone https://github.com/ramya9b/ramyainspires.git
+  cd ramyainspires
+  
+  # Copy all 6 files into this folder, then:
+  git add .
+  git commit -m "Initial website launch — ramyainspires.com"
+  git push origin main
+
+=============================================================
+STEP 3 — CONNECT TO CLOUDFLARE PAGES (5 minutes)
+=============================================================
+
+1. Open dash.cloudflare.com and log in
+
+2. In left sidebar → click "Workers & Pages"
+
+3. Click "Create application" → click "Pages" tab → 
+   click "Connect to Git"
+
+4. Click "GitHub" → authorize Cloudflare if asked
+
+5. Search for and select: ramyainspires
+   Click: "Begin setup"
+
+6. On the Build settings page, fill in EXACTLY:
+   
+   Project name:          ramyainspires
+   Production branch:     main
+   Framework preset:      None  ← IMPORTANT: select None
+   Build command:         (leave completely empty)
+   Build output directory: (leave completely empty)
+   
+   Click: "Save and Deploy"
+
+7. Cloudflare will deploy in about 60 seconds.
+   You will see a URL like: ramyainspires.pages.dev
+   
+   Open that URL — your website is live!
+
+=============================================================
+STEP 4 — CONNECT YOUR CUSTOM DOMAIN (5 minutes)
+=============================================================
+
+You need to have purchased ramyainspires.com first.
+If not purchased yet — skip this step and use .pages.dev for now.
+
+IF you buy on Namecheap (recommended):
+
+  Part A — In Cloudflare:
+  1. Go to your ramyainspires project in Cloudflare Pages
+  2. Click "Custom domains" tab
+  3. Click "Set up a custom domain"
+  4. Type: ramyainspires.com
+  5. Click "Continue"
+  6. Cloudflare will show you nameserver values like:
+     ns1.cloudflare.com
+     ns2.cloudflare.com
+
+  Part B — In Namecheap:
+  1. Log in to namecheap.com
+  2. Go to Domain List → click "Manage" next to ramyainspires.com
+  3. Click "Nameservers" → select "Custom DNS"
+  4. Enter the two Cloudflare nameservers shown above
+  5. Click Save (green tick)
+  6. Wait 5-30 minutes for DNS to update
+
+  Part C — Back in Cloudflare:
+  1. Click "Check DNS records" 
+  2. Once verified → click "Activate domain"
+  3. Cloudflare automatically adds free SSL certificate
+  4. Your site is now live at https://ramyainspires.com 
+
+=============================================================
+STEP 5 — TEST YOUR LIVE WEBSITE (2 minutes)
+=============================================================
+
+Check these things after going live:
+
+  [ ] Open ramyainspires.com (or .pages.dev) — site loads
+  [ ] Language toggle works — EN / తె / ಕ
+  [ ] Typing animation plays in hero section
+  [ ] Copy button on free prompt works
+  [ ] On mobile — site looks good and readable
+  [ ] Nav links scroll to correct sections
+  [ ] About section shows correctly
+
+=============================================================
+STEP 6 — WHAT TO UPDATE AFTER INSTAMOJO IS SET UP
+=============================================================
+
+When your Instamojo account and payment link is ready:
+
+1. Open index.html in any text editor (Notepad, VS Code)
+
+2. Find this line (around line 980):
+   function showInstamojo() {
+     alert('Payment link coming soon!...');
+   }
+
+3. Replace the entire function with:
+   function showInstamojo() {
+     window.open('YOUR_INSTAMOJO_LINK_HERE', '_blank');
+   }
+
+4. Also find the buy button (around line 960):
+   <button class="buy-btn disabled" onclick="showInstamojo()">
+
+5. Remove the word "disabled":
+   <button class="buy-btn" onclick="showInstamojo()">
+
+6. Save the file, upload to GitHub again (drag and drop)
+   Cloudflare automatically redeploys in 60 seconds
+
+=============================================================
+STEP 7 — ADD YOUR PHOTO
+=============================================================
+
+When you have a photo ready:
+
+1. Name your photo: ramya.jpg (keep it under 500KB)
+
+2. Upload it to your GitHub repo (drag and drop alongside index.html)
+
+3. In index.html, find:
+   <div class="about-initial">R</div>
+   <div class="about-photo-note">
+
+4. Replace both lines with:
+   <img src="ramya.jpg" alt="Ramya — Founder, Ramya Inspires" 
+        style="width:100%;height:100%;object-fit:cover;border-radius:12px;"/>
+
+5. Save and upload to GitHub
+
+=============================================================
+FUTURE UPDATES — HOW TO UPDATE THE WEBSITE
+=============================================================
+
+Every time you want to change something:
+
+1. Download index.html from GitHub (click file → Download)
+2. Make your changes in a text editor
+3. Go to github.com/ramya9b/ramyainspires
+4. Click index.html → click pencil icon (Edit) → paste new content
+   OR drag and drop the updated file
+5. Click "Commit changes"
+6. Cloudflare auto-deploys in 60 seconds — done!
+
+=============================================================
+IF SOMETHING GOES WRONG — TROUBLESHOOTING
+=============================================================
+
+Problem: Site shows "404 Not Found"
+Fix: Make sure _redirects file is uploaded with this exact content:
+     /* /index.html 200
+
+Problem: Site shows old version after update
+Fix: Hard refresh browser: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
+
+Problem: Custom domain not working
+Fix: DNS takes up to 48 hours. Check nameservers are saved in Namecheap.
+
+Problem: Language toggle not working
+Fix: Clear browser cache. Try in incognito window.
+
+Problem: Typing animation not playing
+Fix: Disable ad blockers temporarily. JavaScript must be enabled.
+
+=============================================================
+SUMMARY — 6 FILES TO UPLOAD TO GITHUB
+=============================================================
+
+  index.html     — the complete website (most important)
+  _redirects     — required for Cloudflare SPA routing
+  _headers       — security headers
+  robots.txt     — tells Google to index your site
+  sitemap.xml    — helps Google find your pages
+  .gitignore     — keeps repo clean
+
+All 6 files are in your downloaded ZIP.
+
+=============================================================
+DONE! Your website checklist before going live:
+=============================================================
+
+  [ ] GitHub repo ramya9b/ramyainspires created
+  [ ] All 6 files uploaded to GitHub
+  [ ] Cloudflare Pages connected to GitHub repo
+  [ ] Build settings: Framework = None, commands = empty
+  [ ] Site live at ramyainspires.pages.dev
+  [ ] Custom domain ramyainspires.com connected (after purchase)
+  [ ] Instamojo link added to buy button
+  [ ] Your photo added to About section
+  [ ] Tested on mobile — looks good
+  [ ] Shared with 5 ICI contacts on WhatsApp
+
+=============================================================

@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramya Inspires — AI Prompts for Indian Professionals</title>
+  <meta name="description" content="Expert AI prompts and ready-made presentations for Indian teachers, speakers and professionals. In English, Telugu and Kannada. By Ramya, ICI Speaker & QA Architect, Bengaluru." />
+  <meta name="keywords" content="AI prompts India, PPT prompts teachers, voice modulation workshop, Telugu AI prompts, Kannada prompts, ICI speaker resources" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── DESIGN TOKENS ─────────────────────────────────────── */
+    :root {
+      --e0: #051A0F;   /* deepest emerald — nav bg */
+      --e1: #0A3020;   /* dark emerald — hero bg */
+      --e2: #0D4A2C;   /* emerald — section bg */
+      --e3: #115E38;   /* mid emerald */
+      --e4: #177A4A;   /* light emerald — hover */
+      --mint: #C8F0D8; /* mint — soft text on dark */
+      --mint2: #E8F8EF;/* pale mint — light section bg */
+      --g0: #8A6A1C;   /* deep gold */
+      --g1: #C4983C;   /* gold */
+      --g2: #E8C96A;   /* bright gold — headlines on dark */
+      --g3: #F5E3A0;   /* pale gold */
+      --cream: #F8FAF5;/* page background */
+      --cream2: #EFF5EA;
+      --ink: #0A1F0F;  /* body text */
+      --muted: #4A6B55;/* secondary text */
+      --muted2: #7A9880;
+      --white: #FFFFFF;
+      --green-ok: #16A34A;
+      --radius: 14px;
+      --shadow: 0 4px 24px rgba(10,48,32,0.10);
+      --shadow-lg: 0 12px 48px rgba(10,48,32,0.14);
+    }
+
+    /* ─── RESET ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── LANGUAGE SYSTEM ───────────────────────────────────── */
+    [data-en], [data-te], [data-kn] { display: none; }
+    body.lang-en [data-en] { display: revert; }
+    body.lang-te [data-te] { display: revert; }
+    body.lang-kn [data-kn] { display: revert; }
+    /* inline spans */
+    span[data-en], span[data-te], span[data-kn] { display: none; }
+    body.lang-en span[data-en] { display: inline; }
+    body.lang-te span[data-te] { display: inline; }
+    body.lang-kn span[data-kn] { display: inline; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: var(--e0);
+      border-bottom: 1px solid rgba(200,240,216,0.08);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 64px;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem; color: var(--g2);
+      letter-spacing: 0.01em; white-space: nowrap;
+    }
+    .nav-center {
+      display: flex; gap: 2rem;
+    }
+    .nav-link {
+      font-size: 0.875rem; font-weight: 400;
+      color: rgba(200,240,216,0.65);
+      transition: color 0.2s; padding: 0.25rem 0;
+      border-bottom: 1px solid transparent;
+    }
+    .nav-link:hover { color: var(--g2); border-color: var(--g1); }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(200,240,216,0.2);
+      color: rgba(200,240,216,0.55);
+      padding: 0.25rem 0.6rem; border-radius: 6px;
+      font-size: 0.75rem; font-weight: 600;
+      transition: all 0.2s;
+    }
+    .lang-btn:hover,
+    .lang-btn.active {
+      background: var(--g1); color: var(--e0);
+      border-color: var(--g1);
+    }
+    .nav-cta {
+      background: var(--g1); color: var(--e0);
+      padding: 0.5rem 1.25rem; border-radius: 8px;
+      font-size: 0.875rem; font-weight: 700;
+      border: none; transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--g2); }
+    .nav-mobile-toggle { display: none; background: none; border: none; color: var(--mint); font-size: 1.5rem; }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(150deg, var(--e0) 0%, var(--e1) 55%, var(--e2) 100%);
+      min-height: 100vh;
+      padding: 64px 0 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      position: relative;
+      overflow: hidden;
+    }
+    /* ambient radial behind right panel */
+    .hero::after {
+      content: '';
+      position: absolute; top: 20%; right: 0;
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse, rgba(196,152,60,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    /* subtle leaf pattern */
+    .hero::before {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(23,122,74,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-left {
+      padding: 5rem 3rem 5rem 4rem;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--g2);
+      margin-bottom: 1.75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block; width: 28px; height: 1px; background: var(--g1);
+    }
+    .hero-h {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 400; line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .hero-h .gold-word {
+      color: var(--g2);
+      font-style: italic;
+    }
+    .hero-h .mint-word { color: var(--mint); }
+    .hero-p {
+      font-size: 1rem; color: rgba(200,240,216,0.72);
+      line-height: 1.8; max-width: 440px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-btns {
+      display: flex; gap: 0.875rem; flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .btn-gold {
+      background: var(--g1); color: var(--e0);
+      padding: 0.875rem 2rem; border-radius: 8px;
+      font-size: 0.95rem; font-weight: 700;
+      border: none; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      box-shadow: 0 4px 16px rgba(196,152,60,0.3);
+    }
+    .btn-gold:hover { background: var(--g2); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(196,152,60,0.4); }
+    .btn-ghost-mint {
+      background: transparent;
+      color: var(--mint); font-size: 0.95rem; font-weight: 500;
+      border: 1.5px solid rgba(200,240,216,0.25);
+      padding: 0.875rem 2rem; border-radius: 8px;
+      transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .btn-ghost-mint:hover { border-color: var(--mint); color: var(--white); }
+    .hero-trust {
+      display: flex; flex-wrap: wrap; gap: 1.25rem;
+    }
+    .trust-it {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8rem; color: rgba(200,240,216,0.55);
+    }
+    .trust-it .ti-mark { color: var(--g2); font-size: 0.7rem; }
+
+    /* hero right — the signature element */
+    .hero-right {
+      padding: 5rem 3rem 5rem 2rem;
+      display: flex; flex-direction: column; justify-content: center;
+      gap: 1rem; position: relative; z-index: 1;
+    }
+    .prompt-live-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200,240,216,0.15);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .plc-header {
+      background: rgba(0,0,0,0.2);
+      padding: 0.75rem 1.25rem;
+      display: flex; align-items: center; gap: 0.6rem;
+      border-bottom: 1px solid rgba(200,240,216,0.08);
+    }
+    .plc-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .plc-title {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--g2);
+      margin-left: 0.25rem;
+    }
+    .plc-body { padding: 1.5rem; }
+    .plc-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--g1); margin-bottom: 0.75rem;
+    }
+    .plc-text {
+      font-size: 0.85rem; line-height: 1.75;
+      color: rgba(200,240,216,0.75);
+      font-style: italic; margin-bottom: 1.25rem;
+      min-height: 110px;
+    }
+    .plc-cursor {
+      display: inline-block; width: 2px; height: 1em;
+      background: var(--g2); vertical-align: middle;
+      animation: blink 0.9s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+    .plc-actions {
+      display: flex; gap: 0.6rem; align-items: center;
+    }
+    .copy-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--g1); color: var(--e0);
+      padding: 0.5rem 1.1rem; border-radius: 7px;
+      font-size: 0.8rem; font-weight: 700;
+      border: none; transition: all 0.2s;
+    }
+    .copy-btn:hover { background: var(--g2); }
+    .copy-btn.done { background: var(--green-ok); color: white; }
+    .plc-note {
+      font-size: 0.72rem; color: rgba(200,240,216,0.4);
+    }
+    /* small stat cards */
+    .hero-stat-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    }
+    .h-stat {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200,240,216,0.1);
+      border-radius: 10px; padding: 0.875rem 1rem;
+    }
+    .h-stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem; color: var(--g2); line-height: 1;
+    }
+    .h-stat-label {
+      font-size: 0.72rem; color: rgba(200,240,216,0.5);
+      margin-top: 0.25rem;
+    }
+
+    /* ─── SHARED SECTION STYLES ─────────────────────────────── */
+    .section { padding: 5rem 2rem; }
+    .container { max-width: 1060px; margin: 0 auto; }
+    .sec-eye {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em;
+      text-transform: uppercase; color: var(--e3);
+      margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .sec-eye::before { content: ''; width: 20px; height: 1px; background: var(--g1); }
+    .sec-h {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+      font-weight: 400; line-height: 1.2;
+      color: var(--ink); margin-bottom: 0.6rem;
+    }
+    .sec-sub {
+      font-size: 0.95rem; color: var(--muted);
+      max-width: 520px; line-height: 1.75;
+    }
+    /* dark section overrides */
+    .dark-sec .sec-eye { color: var(--g1); }
+    .dark-sec .sec-eye::before { background: var(--g1); }
+    .dark-sec .sec-h { color: var(--white); }
+    .dark-sec .sec-sub { color: var(--mint); opacity: 0.7; }
+
+    /* ─── FREE SAMPLE SECTION ───────────────────────────────── */
+    .sample-sec {
+      background: var(--cream2);
+      border-top: 1px solid rgba(10,48,32,0.06);
+    }
+    .sample-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2.5rem; margin-top: 2.5rem; align-items: start;
+    }
+    .full-prompt-card {
+      background: var(--white);
+      border: 1px solid rgba(10,48,32,0.1);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .fpc-top {
+      background: var(--e1);
+      padding: 1rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .fpc-top-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--g2);
+    }
+    .free-tag {
+      background: var(--g1); color: var(--e0);
+      font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.6rem;
+      border-radius: 5px; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .fpc-body { padding: 1.5rem; }
+    .fpc-prompt {
+      font-size: 0.875rem; line-height: 1.8;
+      color: var(--muted); font-style: italic;
+      margin-bottom: 1.25rem;
+      border-left: 3px solid var(--g1);
+      padding-left: 1rem;
+    }
+    .fpc-prompt strong { color: var(--ink); font-style: normal; }
+    .fpc-actions {
+      display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;
+    }
+    .fpc-copy {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--e2); color: var(--mint);
+      padding: 0.6rem 1.25rem; border-radius: 8px;
+      font-size: 0.82rem; font-weight: 600;
+      border: none; transition: all 0.2s;
+    }
+    .fpc-copy:hover { background: var(--e3); color: var(--white); }
+    .fpc-copy.done { background: var(--green-ok); color: white; }
+    .fpc-where { font-size: 0.75rem; color: var(--muted2); }
+
+    .result-card {
+      background: var(--white);
+      border: 1px solid rgba(10,48,32,0.08);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .rc-header {
+      background: var(--cream2);
+      padding: 0.875rem 1.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      border-bottom: 1px solid rgba(10,48,32,0.07);
+    }
+    .rc-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-ok); }
+    .rc-label { font-size: 0.7rem; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+    .rc-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.875rem; }
+    /* simulated slide previews */
+    .slide-prev {
+      background: linear-gradient(135deg, var(--e0), var(--e1));
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+      border: 1px solid rgba(196,152,60,0.25);
+      position: relative; overflow: hidden;
+    }
+    .slide-prev::before {
+      content: ''; position: absolute;
+      left: 0; top: 0; bottom: 0; width: 3px;
+      background: var(--g1);
+    }
+    .sp-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 0.9rem; color: var(--g2);
+      margin-bottom: 0.3rem; padding-left: 0.75rem;
+    }
+    .sp-sub { font-size: 0.7rem; color: var(--mint); opacity: 0.6; padding-left: 0.75rem; margin-bottom: 0.6rem; }
+    .sp-lines { padding-left: 0.75rem; display: flex; flex-direction: column; gap: 0.3rem; }
+    .sp-line { height: 3px; border-radius: 2px; background: rgba(200,240,216,0.2); }
+    .sp-line.w60 { width: 60%; }
+    .sp-line.w80 { width: 80%; }
+    .sp-line.w45 { width: 45%; }
+    .sp-badge { position: absolute; top: 0.75rem; right: 0.75rem;
+      font-size: 0.6rem; background: rgba(196,152,60,0.2);
+      color: var(--g2); padding: 0.15rem 0.5rem; border-radius: 4px; }
+    .rc-note {
+      font-size: 0.75rem; color: var(--muted2);
+      display: flex; align-items: flex-start; gap: 0.4rem; line-height: 1.5;
+    }
+    .rc-note span { color: var(--green-ok); flex-shrink: 0; margin-top: 2px; }
+
+    /* ─── PRODUCT SECTION ───────────────────────────────────── */
+    .product-sec {
+      background: var(--e0);
+    }
+    .product-card {
+      margin-top: 2.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(200,240,216,0.1);
+      border-radius: 20px; overflow: hidden;
+    }
+    .pc-header {
+      background: var(--e1);
+      padding: 1.75rem 2.5rem;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+      border-bottom: 1px solid rgba(200,240,216,0.07);
+    }
+    .pc-for {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(196,152,60,0.15); border: 1px solid rgba(196,152,60,0.25);
+      border-radius: 6px; padding: 0.25rem 0.8rem;
+      font-size: 0.68rem; font-weight: 700; color: var(--g2);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .pc-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      color: var(--white); margin-top: 0.4rem;
+    }
+    .pc-slides {
+      font-size: 0.82rem; color: var(--g1);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .pc-body {
+      display: grid; grid-template-columns: 1.4fr 1fr;
+    }
+    .pc-left {
+      padding: 2rem 2.5rem;
+      border-right: 1px solid rgba(200,240,216,0.07);
+    }
+    .includes-list {
+      list-style: none; margin-bottom: 0;
+    }
+    .includes-list li {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      font-size: 0.875rem; color: rgba(200,240,216,0.8);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(200,240,216,0.06);
+      line-height: 1.5;
+    }
+    .includes-list li:last-child { border-bottom: none; }
+    .inc-mark { color: var(--g2); flex-shrink: 0; margin-top: 2px; font-size: 0.7rem; }
+    .pc-right { padding: 2rem 2.5rem; }
+    .options-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--g1); margin-bottom: 1rem;
+    }
+    .price-opt {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(200,240,216,0.12);
+      border-radius: 10px; padding: 1rem 1.25rem;
+      margin-bottom: 0.6rem; cursor: pointer;
+      transition: all 0.2s;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .price-opt:hover { border-color: rgba(196,152,60,0.4); }
+    .price-opt.featured {
+      border-color: var(--g1);
+      background: rgba(196,152,60,0.07);
+    }
+    .po-name { font-size: 0.875rem; font-weight: 600; color: var(--white); }
+    .po-desc { font-size: 0.72rem; color: rgba(200,240,216,0.5); margin-top: 0.2rem; }
+    .po-right { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+    .po-best {
+      background: var(--g1); color: var(--e0);
+      font-size: 0.6rem; font-weight: 700; padding: 0.15rem 0.5rem;
+      border-radius: 4px; text-transform: uppercase;
+    }
+    .po-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem; color: var(--g2);
+    }
+    .po-price .was {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem; color: rgba(200,240,216,0.35);
+      text-decoration: line-through; display: block; font-weight: 400;
+    }
+    .buy-btn {
+      width: 100%; margin-top: 1rem;
+      background: var(--g1); color: var(--e0);
+      padding: 0.9rem; border-radius: 9px;
+      font-size: 0.9rem; font-weight: 700;
+      border: none; transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+    }
+    .buy-btn:hover { background: var(--g2); }
+    .buy-btn.disabled {
+      background: rgba(196,152,60,0.2); color: rgba(200,240,216,0.4);
+      cursor: not-allowed;
+    }
+    .instamojo-note {
+      font-size: 0.72rem; color: rgba(200,240,216,0.35);
+      text-align: center; margin-top: 0.6rem; line-height: 1.5;
+    }
+    .refund-pill {
+      display: flex; align-items: center; gap: 0.4rem; justify-content: center;
+      margin-top: 0.75rem;
+      font-size: 0.75rem; color: var(--green-ok); font-weight: 500;
+    }
+
+    /* ─── HOW TO USE ─────────────────────────────────────────── */
+    .howto-sec { background: var(--cream2); }
+    .steps-row {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 1.25rem; margin-top: 2.5rem;
+    }
+    .step-card {
+      background: var(--white);
+      border: 1px solid rgba(10,48,32,0.08);
+      border-radius: var(--radius); padding: 1.5rem;
+      position: relative; overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .step-card:hover { border-color: var(--e3); transform: translateY(-2px); }
+    .step-n {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3rem; color: rgba(10,48,32,0.07);
+      line-height: 1; margin-bottom: 0.5rem;
+    }
+    .step-title { font-size: 0.95rem; font-weight: 600; color: var(--e2); margin-bottom: 0.4rem; }
+    .step-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
+    .step-note { font-size: 0.75rem; color: var(--green-ok); margin-top: 0.6rem; font-weight: 500; }
+
+    /* ─── HONEST NOTE ────────────────────────────────────────── */
+    .honest-sec { background: var(--cream); }
+    .honest-box {
+      background: var(--white);
+      border: 1px solid rgba(10,48,32,0.1);
+      border-left: 4px solid var(--e3);
+      border-radius: 12px; padding: 1.5rem 2rem;
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      box-shadow: var(--shadow);
+    }
+    .honest-icon { font-size: 1.75rem; flex-shrink: 0; }
+    .honest-title { font-size: 0.95rem; font-weight: 600; color: var(--e2); margin-bottom: 0.4rem; }
+    .honest-text { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+
+    /* ─── ABOUT ──────────────────────────────────────────────── */
+    .about-sec {
+      background: linear-gradient(150deg, var(--e0) 0%, var(--e1) 100%);
+    }
+    .about-grid {
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 3.5rem; align-items: center; margin-top: 2.5rem;
+    }
+    .about-photo {
+      width: 180px; height: 220px;
+      background: linear-gradient(135deg, var(--e2), var(--e3));
+      border: 2px solid var(--g1);
+      border-radius: 14px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 0 32px rgba(196,152,60,0.2);
+      position: relative; overflow: hidden;
+    }
+    .about-photo::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
+      background: linear-gradient(to top, rgba(196,152,60,0.1), transparent);
+    }
+    .about-initial {
+      font-family: 'DM Serif Display', serif;
+      font-size: 4rem; color: var(--g2); line-height: 1;
+    }
+    .about-photo-note {
+      font-size: 0.65rem; color: rgba(200,240,216,0.35);
+      margin-top: 0.3rem; text-align: center; padding: 0 0.5rem;
+    }
+    .about-badge {
+      position: absolute; bottom: -0.5rem; right: -0.5rem;
+      background: var(--g1); color: var(--e0);
+      font-size: 0.7rem; font-weight: 700;
+      padding: 0.4rem 0.8rem; border-radius: 8px;
+      text-align: center; line-height: 1.4;
+      box-shadow: 0 4px 12px rgba(196,152,60,0.4);
+    }
+    .about-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--g2); margin-bottom: 0.3rem;
+    }
+    .about-role {
+      font-size: 0.875rem; color: rgba(200,240,216,0.6);
+      margin-bottom: 1.25rem; line-height: 1.65;
+    }
+    .about-mission {
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--g1);
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.25rem; margin-bottom: 1.5rem;
+    }
+    .about-mission p {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem; font-style: italic;
+      color: var(--mint); line-height: 1.65;
+    }
+    .about-body {
+      font-size: 0.9rem; color: rgba(200,240,216,0.65);
+      line-height: 1.8; margin-bottom: 1.5rem; max-width: 560px;
+    }
+    .cred-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .cred-pill {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(200,240,216,0.15);
+      border-radius: 6px; padding: 0.3rem 0.8rem;
+      font-size: 0.75rem; color: rgba(200,240,216,0.65);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    .footer {
+      background: var(--e0);
+      border-top: 1px solid rgba(196,152,60,0.15);
+      padding: 2.5rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+    }
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem; color: var(--g2);
+    }
+    .footer-links {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.82rem; color: rgba(200,240,216,0.45);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--g1); }
+    .footer-copy {
+      font-size: 0.75rem; color: rgba(200,240,216,0.3);
+      width: 100%;
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal { opacity: 0; }
+    .reveal.visible { animation: fadeUp 0.55s ease both; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 4rem 1.5rem; }
+      .sample-grid { grid-template-columns: 1fr; }
+      .steps-row { grid-template-columns: 1fr 1fr; }
+      .pc-body { grid-template-columns: 1fr; }
+      .pc-left { border-right: none; border-bottom: 1px solid rgba(200,240,216,0.07); }
+      .about-grid { grid-template-columns: 1fr; text-align: center; }
+      .about-photo { margin: 0 auto; }
+      .about-mission { text-align: left; }
+      .cred-pills { justify-content: center; }
+      .nav-center { display: none; }
+      .nav-mobile-toggle { display: block; }
+    }
+    @media (max-width: 600px) {
+      .nav { padding: 0 1rem; }
+      .hero-btns { flex-direction: column; }
+      .btn-gold, .btn-ghost-mint { text-align: center; justify-content: center; }
+      .steps-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .pc-header { flex-direction: column; align-items: flex-start; }
+      .section { padding: 3.5rem 1.25rem; }
+    }
+
+    /* mobile nav drawer */
+    .mobile-nav {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: var(--e0); padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid rgba(200,240,216,0.08);
+      flex-direction: column; gap: 1rem; z-index: 190;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a, .mobile-nav button {
+      font-size: 0.95rem; color: rgba(200,240,216,0.75);
+      background: none; border: none; text-align: left; padding: 0.25rem 0;
+    }
+    .mobile-nav a:hover { color: var(--g2); }
+  </style>
+</head>
+
+<body class="lang-en">
+
+  <!-- ── NAV ──────────────────────────────────────────────────── -->
+  <nav class="nav">
+    <div class="nav-logo">Ramya Inspires</div>
+    <div class="nav-center">
+      <a href="#sample" class="nav-link">
+        <span data-en>Free Sample</span>
+        <span data-te>ఉచిత నమూనా</span>
+        <span data-kn>ಉಚಿತ ಮಾದರಿ</span>
+      </a>
+      <a href="#product" class="nav-link">
+        <span data-en>Product</span>
+        <span data-te>ఉత్పత్తి</span>
+        <span data-kn>ಉತ್ಪನ್ನ</span>
+      </a>
+      <a href="#howto" class="nav-link">
+        <span data-en>How to Use</span>
+        <span data-te>ఎలా వాడాలి</span>
+        <span data-kn>ಹೇಗೆ ಬಳಸಬೇಕು</span>
+      </a>
+      <a href="#about" class="nav-link">
+        <span data-en>About</span>
+        <span data-te>గురించి</span>
+        <span data-kn>ಬಗ್ಗೆ</span>
+      </a>
+    </div>
+    <div class="nav-right">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btn-te" onclick="setLang('te')">తె</button>
+      <button class="lang-btn" id="btn-kn" onclick="setLang('kn')">ಕ</button>
+      <a href="#product" class="nav-cta">
+        <span data-en>Buy ₹499</span>
+        <span data-te>కొనండి ₹499</span>
+        <span data-kn>ಕೊಳ್ಳಿ ₹499</span>
+      </a>
+      <button class="nav-mobile-toggle" onclick="toggleMobileNav()" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#sample" onclick="closeMobileNav()">Free Sample</a>
+    <a href="#product" onclick="closeMobileNav()">Product</a>
+    <a href="#howto" onclick="closeMobileNav()">How to Use</a>
+    <a href="#about" onclick="closeMobileNav()">About</a>
+  </div>
+
+  <!-- ── HERO ──────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span data-en>AI Prompts for Indian Professionals</span>
+        <span data-te>భారతీయ నిపుణులకు AI ప్రాంప్ట్లు</span>
+        <span data-kn>ಭಾರತೀಯ ವೃತ್ತಿಪರರಿಗಾಗಿ AI ಪ್ರಾಂಪ್ಟ್‌ಗಳು</span>
+      </div>
+
+      <h1 class="hero-h">
+        <span data-en>
+          Save <span class="gold-word">20 Hours.</span><br/>
+          Present with<br/>
+          <span class="mint-word">Real Confidence.</span>
+        </span>
+        <span data-te>
+          <span class="gold-word">20 గంటలు</span> ఆదా చేయండి.<br/>
+          <span class="mint-word">నమ్మకంగా</span> మాట్లాడండి.
+        </span>
+        <span data-kn>
+          <span class="gold-word">20 ಗಂಟೆ</span> ಉಳಿಸಿ.<br/>
+          <span class="mint-word">ಆತ್ಮವಿಶ್ವಾಸದಿಂದ</span> ಮಾತಾಡಿ.
+        </span>
+      </h1>
+
+      <p class="hero-p">
+        <span data-en>Expert AI prompts and ready-made presentations for Indian teachers, speakers and professionals. Tested by Ramya personally. In English, Telugu and Kannada.</span>
+        <span data-te>భారతీయ ఉపాధ్యాయులు, స్పీకర్లు మరియు నిపుణులకోసం నిపుణ AI ప్రాంప్ట్లు మరియు సిద్ధ ప్రదర్శనలు. రమ్య స్వయంగా పరీక్షించింది.</span>
+        <span data-kn>ಭಾರತೀಯ ಶಿಕ್ಷಕರು, ಸ್ಪೀಕರ್‌ಗಳು ಮತ್ತು ವೃತ್ತಿಪರರಿಗಾಗಿ ತಜ್ಞ AI ಪ್ರಾಂಪ್ಟ್‌ಗಳು ಮತ್ತು ಸಿದ್ಧ ಪ್ರಸ್ತುತಿಗಳು. ರಮ್ಯ ವೈಯಕ್ತಿಕವಾಗಿ ಪರೀಕ್ಷಿಸಿದ್ದಾರೆ.</span>
+      </p>
+
+      <div class="hero-btns">
+        <a href="#sample" class="btn-gold">
+          <span data-en>Try Free Prompt First</span>
+          <span data-te>ముందు ఉచిత ప్రాంప్ట్ ప్రయత్నించండి</span>
+          <span data-kn>ಮೊದಲು ಉಚಿತ ಪ್ರಾಂಪ್ಟ್ ಪ್ರಯತ್ನಿಸಿ</span>
+        </a>
+        <a href="#product" class="btn-ghost-mint">
+          <span data-en>See the Product</span>
+          <span data-te>ఉత్పత్తి చూడండి</span>
+          <span data-kn>ಉತ್ಪನ್ನ ನೋಡಿ</span>
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="trust-it"><span class="ti-mark">✦</span>
+          <span data-en>Personally tested by Ramya</span>
+          <span data-te>రమ్య స్వయంగా పరీక్షించింది</span>
+          <span data-kn>ರಮ್ಯ ವೈಯಕ್ತಿಕವಾಗಿ ಪರೀಕ್ಷಿಸಿದ್ದಾರೆ</span>
+        </div>
+        <div class="trust-it"><span class="ti-mark">✦</span>
+          <span data-en>Works in ChatGPT & Claude</span>
+          <span data-te>ChatGPT & Claude లో పనిచేస్తుంది</span>
+          <span data-kn>ChatGPT & Claude ನಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ</span>
+        </div>
+        <div class="trust-it"><span class="ti-mark">✦</span>
+          <span data-en>UPI payment · Instant download</span>
+          <span data-te>UPI చెల్లింపు · తక్షణ డౌన్‌లోడ్</span>
+          <span data-kn>UPI ಪಾವತಿ · ತಕ್ಷಣ ಡೌನ್‌ಲೋಡ್</span>
+        </div>
+        <div class="trust-it"><span class="ti-mark">✦</span>
+          <span data-en>7-day full refund</span>
+          <span data-te>7 రోజుల పూర్తి వాపసు</span>
+          <span data-kn>7 ದಿನಗಳ ಸಂಪೂರ್ಣ ಮರುಪಾವತಿ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- signature element: live typing prompt card -->
+    <div class="hero-right">
+      <div class="prompt-live-card">
+        <div class="plc-header">
+          <div class="plc-dot" style="background:#FF5F56"></div>
+          <div class="plc-dot" style="background:#FFBD2E"></div>
+          <div class="plc-dot" style="background:#27C93F"></div>
+          <div class="plc-title">Free Sample Prompt — Live Preview</div>
+        </div>
+        <div class="plc-body">
+          <div class="plc-label">PPT Prompt · For Teachers & Speakers</div>
+          <div class="plc-text" id="typeTarget"><span class="plc-cursor"></span></div>
+          <div class="plc-actions">
+            <button class="copy-btn" id="heroCopyBtn" onclick="copyHeroPrompt()">📋
+              <span data-en>Copy Prompt</span>
+              <span data-te>ప్రాంప్ట్ కాపీ</span>
+              <span data-kn>ಪ್ರಾಂಪ್ಟ್ ಕಾಪಿ</span>
+            </button>
+            <span class="plc-note">
+              <span data-en>Paste into chatgpt.com or claude.ai</span>
+              <span data-te>chatgpt.com లో పేస్ట్ చేయండి</span>
+              <span data-kn>chatgpt.com ನಲ್ಲಿ ಪೇಸ್ಟ್ ಮಾಡಿ</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-stat-row">
+        <div class="h-stat">
+          <div class="h-stat-num">21</div>
+          <div class="h-stat-label">
+            <span data-en>Slides in the pack</span>
+            <span data-te>ప్యాక్‌లో స్లైడ్లు</span>
+            <span data-kn>ಪ್ಯಾಕ್‌ನಲ್ಲಿ ಸ್ಲೈಡ್‌ಗಳು</span>
+          </div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num">20+</div>
+          <div class="h-stat-label">
+            <span data-en>Hours saved per session</span>
+            <span data-te>సెషన్‌కు గంటలు ఆదా</span>
+            <span data-kn>ಸೆಷನ್‌ಗೆ ಗಂಟೆ ಉಳಿತಾಯ</span>
+          </div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num">3</div>
+          <div class="h-stat-label">
+            <span data-en>Languages supported</span>
+            <span data-te>భాషలు మద్దతు</span>
+            <span data-kn>ಭಾಷೆಗಳ ಬೆಂಬಲ</span>
+          </div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num">₹499</div>
+          <div class="h-stat-label">
+            <span data-en>Complete kit price</span>
+            <span data-te>పూర్తి కిట్ ధర</span>
+            <span data-kn>ಸಂಪೂರ್ಣ ಕಿಟ್ ಬೆಲೆ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FREE SAMPLE ────────────────────────────────────────────── -->
+  <section class="section sample-sec" id="sample">
+    <div class="container">
+      <div class="sec-eye">
+        <span data-en>Free Sample — No Email, No Login</span>
+        <span data-te>ఉచిత నమూనా — ఇమెయిల్ అవసరం లేదు</span>
+        <span data-kn>ಉಚಿತ ಮಾದರಿ — ಇಮೇಲ್ ಅಗತ್ಯವಿಲ್ಲ</span>
+      </div>
+      <h2 class="sec-h reveal">
+        <span data-en>Try This Prompt Right Now. It's Free.</span>
+        <span data-te>ఈ ప్రాంప్ట్‌ని ఇప్పుడే ప్రయత్నించండి. ఇది ఉచితం.</span>
+        <span data-kn>ಈ ಪ್ರಾಂಪ್ಟ್ ಈಗಲೇ ಪ್ರಯತ್ನಿಸಿ. ಇದು ಉಚಿತ.</span>
+      </h2>
+      <p class="sec-sub reveal">
+        <span data-en>Copy this prompt, paste it into ChatGPT or Claude, and watch a complete presentation appear in 30 seconds. This is 1 of 20 prompts inside the full pack.</span>
+        <span data-te>ఈ ప్రాంప్ట్ కాపీ చేసి ChatGPT లేదా Claude లో పేస్ట్ చేయండి. 30 సెకన్లలో పూర్తి ప్రదర్శన వస్తుంది. పూర్తి ప్యాక్‌లో 20 ప్రాంప్ట్‌లలో ఇది 1.</span>
+        <span data-kn>ಈ ಪ್ರಾಂಪ್ಟ್ ಕಾಪಿ ಮಾಡಿ ChatGPT ಅಥವಾ Claude ನಲ್ಲಿ ಪೇಸ್ಟ್ ಮಾಡಿ. 30 ಸೆಕೆಂಡ್‌ನಲ್ಲಿ ಸಂಪೂರ್ಣ ಪ್ರಸ್ತುತಿ ಬರುತ್ತದೆ.</span>
+      </p>
+
+      <div class="sample-grid">
+        <div class="full-prompt-card reveal">
+          <div class="fpc-top">
+            <div class="fpc-top-label">
+              <span data-en>Voice Modulation Opening Slide — PPT Prompt</span>
+              <span data-te>వాయిస్ మాడ్యులేషన్ ఓపెనింగ్ స్లైడ్</span>
+              <span data-kn>ವಾಯ್ಸ್ ಮಾಡ್ಯುಲೇಷನ್ ಓಪನಿಂಗ್ ಸ್ಲೈಡ್</span>
+            </div>
+            <span class="free-tag">FREE</span>
+          </div>
+          <div class="fpc-body">
+            <div class="fpc-prompt" id="fullPromptText">
+              "Act as a <strong>TED-quality Public Speaking Coach, NLP Trainer, and Learning Experience Designer</strong> with 20 years of experience training Indian professionals.
+              <br/><br/>
+              Create a <strong>powerful, memorable opening slide</strong> for a workshop on Voice Modulation for Indian school teachers. Include:
+              <br/><br/>
+              — A bold headline that creates instant curiosity<br/>
+              — An interactive activity: teachers say <em>'I am proud of you'</em> in 5 different emotions (Happy, Angry, Sad, Scared, Excited)<br/>
+              — The scientific reason why voice matters more than words<br/>
+              — Speaker notes in a warm, conversational Indian tone<br/>
+              — A visual suggestion for the slide background<br/><br/>
+              Make it so good that every teacher in the room immediately wants to try it with their students the next morning."
+            </div>
+            <div class="fpc-actions">
+              <button class="fpc-copy" id="fullCopyBtn" onclick="copyFullPrompt()">
+                📋 <span data-en>Copy Prompt</span>
+                <span data-te>ప్రాంప్ట్ కాపీ</span>
+                <span data-kn>ಪ್ರಾಂಪ್ಟ್ ಕಾಪಿ</span>
+              </button>
+              <span class="fpc-where">
+                <span data-en>→ chatgpt.com or claude.ai (both free)</span>
+                <span data-te>→ chatgpt.com లేదా claude.ai</span>
+                <span data-kn>→ chatgpt.com ಅಥವಾ claude.ai</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card reveal">
+          <div class="rc-header">
+            <div class="rc-dot"></div>
+            <div class="rc-label">
+              <span data-en>What this generates — slide preview</span>
+              <span data-te>ఇది ఏమి ఉత్పత్తి చేస్తుంది</span>
+              <span data-kn>ಇದು ಏನನ್ನು ರಚಿಸುತ್ತದೆ</span>
+            </div>
+          </div>
+          <div class="rc-body">
+            <div class="slide-prev">
+              <div class="sp-badge">Slide 1</div>
+              <div class="sp-title">🎙 Your Voice is Your Superpower</div>
+              <div class="sp-sub">Voice Modulation — The Secret Weapon of Great Speakers</div>
+              <div class="sp-lines">
+                <div class="sp-line w80"></div>
+                <div class="sp-line w60"></div>
+                <div class="sp-line w45"></div>
+              </div>
+            </div>
+            <div class="slide-prev" style="background:linear-gradient(135deg,#051830,#0A2848)">
+              <div class="sp-badge" style="color:#60A5FA;background:rgba(96,165,250,0.15)">Slide 4</div>
+              <div class="sp-title" style="color:#93C5FD">📊 The Science of Voice</div>
+              <div class="sp-sub" style="color:#93C5FD;opacity:0.6">Mirror neurons · Emotional triggers · Memory & attention</div>
+              <div class="sp-lines">
+                <div class="sp-line w60"></div>
+                <div class="sp-line w80"></div>
+                <div class="sp-line w45"></div>
+              </div>
+            </div>
+            <div class="rc-note">
+              <span>ℹ</span>
+              <span data-en>These are approximate previews. Your actual ChatGPT or Claude output will include full content, speaker notes, activities, and Indian stories for all 20 slides.</span>
+              <span data-te>ఇవి సుమారు ప్రివ్యూలు. మీ ChatGPT అవుట్‌పుట్ పూర్తి స్పీకర్ నోట్లు మరియు కార్యకలాపాలను కలిగి ఉంటుంది.</span>
+              <span data-kn>ಇವು ಅಂದಾಜು ಪ್ರಿವ್ಯೂಗಳು. ನಿಮ್ಮ ನಿಜವಾದ ಔಟ್‌ಪುಟ್ ಸಂಪೂರ್ಣ ವಿಷಯ ಮತ್ತು ಸ್ಪೀಕರ್ ನೋಟ್‌ಗಳನ್ನು ಒಳಗೊಂಡಿರುತ್ತದೆ.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCT ─────────────────────────────────────────────────── -->
+  <section class="section product-sec dark-sec" id="product">
+    <div class="container">
+      <div class="sec-eye">
+        <span data-en>Our First Product — Tested & Ready</span>
+        <span data-te>మా మొదటి ఉత్పత్తి — పరీక్షించబడింది & సిద్ధంగా ఉంది</span>
+        <span data-kn>ನಮ್ಮ ಮೊದಲ ಉತ್ಪನ್ನ — ಪರೀಕ್ಷಿಸಲಾಗಿದೆ & ಸಿದ್ಧ</span>
+      </div>
+      <h2 class="sec-h reveal">
+        <span data-en>Voice Modulation Workshop</span>
+        <span data-te>వాయిస్ మాడ్యులేషన్ వర్క్‌షాప్</span>
+        <span data-kn>ವಾಯ್ಸ್ ಮಾಡ್ಯುಲೇಷನ್ ವರ್ಕ್‌ಶಾಪ್</span>
+      </h2>
+      <p class="sec-sub reveal">
+        <span data-en>A complete 21-slide TED-quality presentation. Open in PowerPoint, add your name, present tomorrow.</span>
+        <span data-te>పూర్తి 21-స్లైడ్ TED-నాణ్యత ప్రదర్శన. PowerPoint లో తెరవండి, మీ పేరు జోడించండి, రేపు ప్రదర్శించండి.</span>
+        <span data-kn>ಸಂಪೂರ್ಣ 21-ಸ್ಲೈಡ್ TED-ಗುಣಮಟ್ಟದ ಪ್ರಸ್ತುತಿ. PowerPoint ನಲ್ಲಿ ತೆರೆಯಿರಿ, ಹೆಸರು ಸೇರಿಸಿ, ನಾಳೆ ಪ್ರಸ್ತುತಿ ಮಾಡಿ.</span>
+      </p>
+
+      <div class="product-card reveal">
+        <div class="pc-header">
+          <div>
+            <div class="pc-for">✦
+              <span data-en>For Teachers & ICI Speakers</span>
+              <span data-te>ఉపాధ్యాయులు & ICI స్పీకర్లకు</span>
+              <span data-kn>ಶಿಕ್ಷಕರು & ICI ಸ್ಪೀಕರ್‌ಗಳಿಗೆ</span>
+            </div>
+            <div class="pc-title">
+              <span data-en>Voice Modulation — The Secret Weapon of Great Speakers</span>
+              <span data-te>వాయిస్ మాడ్యులేషన్ — గొప్ప స్పీకర్ల రహస్య ఆయుధం</span>
+              <span data-kn>ವಾಯ್ಸ್ ಮಾಡ್ಯುಲೇಷನ್ — ಮಹಾನ್ ಸ್ಪೀಕರ್‌ಗಳ ರಹಸ್ಯ ಆಯುಧ</span>
+            </div>
+          </div>
+          <div class="pc-slides">📊
+            <span data-en>21 slides · Fully designed</span>
+            <span data-te>21 స్లైడ్లు · పూర్తిగా రూపకల్పన</span>
+            <span data-kn>21 ಸ್ಲೈಡ್‌ಗಳು · ಸಂಪೂರ್ಣ ವಿನ್ಯಾಸ</span>
+          </div>
+        </div>
+
+        <div class="pc-body">
+          <div class="pc-left">
+            <ul class="includes-list">
+              <li><span class="inc-mark">✦</span>
+                <span data-en>21 professionally designed slides — ready to present</span>
+                <span data-te>21 వృత్తిపరంగా రూపొందించిన స్లైడ్లు</span>
+                <span data-kn>21 ವೃತ್ತಿಪರವಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಿದ ಸ್ಲೈಡ್‌ಗಳು</span>
+              </li>
+              <li><span class="inc-mark">✦</span>
+                <span data-en>Detailed speaker notes for every single slide</span>
+                <span data-te>ప్రతి స్లైడ్‌కు వివరమైన స్పీకర్ నోట్లు</span>
+                <span data-kn>ಪ್ರತಿ ಸ್ಲೈಡ್‌ಗೆ ವಿವರವಾದ ಸ್ಪೀಕರ್ ನೋಟ್‌ಗಳು</span>
+              </li>
+              <li><span class="inc-mark">✦</span>
+                <span data-en>10 audience activities — Echo, Whisper, Emotion Challenge & more</span>
+                <span data-te>10 ప్రేక్షక కార్యకలాపాలు</span>
+                <span data-kn>10 ಪ್ರೇಕ್ಷಕ ಚಟುವಟಿಕೆಗಳು</span>
+              </li>
+              <li><span class="inc-mark">✦</span>
+                <span data-en>Stories from Swami Vivekananda, APJ Abdul Kalam, Steve Jobs</span>
+                <span data-te>స్వామి వివేకానంద, కలాం, స్టీవ్ జాబ్స్ కథలు</span>
+                <span data-kn>ಸ್ವಾಮಿ ವಿವೇಕಾನಂದ, ಕಲಾಂ, ಸ್ಟೀವ್ ಜಾಬ್ಸ್ ಕಥೆಗಳು</span>
+              </li>
+              <li><span class="inc-mark">✦</span>
+                <span data-en>Tongue twisters in English + Telugu + Hindi</span>
+                <span data-te>ఇంగ్లీష్ + తెలుగు + హిందీ నాలుక మెలికలు</span>
+                <span data-kn>ಇಂಗ್ಲಿಷ್ + ತೆಲುಗು + ಹಿಂದಿ ನಾಲಿಗೆ ತಿರುಚುವಿಕೆ</span>
+              </li>
+              <li><span class="inc-mark">✦</span>
+                <span data-en>30-day voice improvement practice plan</span>
+                <span data-te>30 రోజుల వాయిస్ మెరుగుదల అభ్యాస ప్రణాళిక</span>
+                <span data-kn>30 ದಿನಗಳ ಧ್ವನಿ ಸುಧಾರಣೆ ಅಭ್ಯಾಸ ಯೋಜನೆ</span>
+              </li>
+              <li><span class="inc-mark">✦</span>
+                <span data-en>The mega prompt — customise further in Claude or ChatGPT</span>
+                <span data-te>మెగా ప్రాంప్ట్ — Claude లేదా ChatGPT లో మరింత కస్టమైజ్ చేయండి</span>
+                <span data-kn>ಮೆಗಾ ಪ್ರಾಂಪ್ಟ್ — Claude ಅಥವಾ ChatGPT ನಲ್ಲಿ ಮತ್ತಷ್ಟು ಕಸ್ಟಮೈಸ್ ಮಾಡಿ</span>
+              </li>
+              <li><span class="inc-mark">✦</span>
+                <span data-en>Instant download — no account, no waiting</span>
+                <span data-te>తక్షణ డౌన్‌లోడ్ — అకౌంట్ అవసరం లేదు</span>
+                <span data-kn>ತಕ್ಷಣ ಡೌನ್‌ಲೋಡ್ — ಖಾತೆ ಅಗತ್ಯವಿಲ್ಲ</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pc-right">
+            <div class="options-label">
+              <span data-en>Choose Your Option</span>
+              <span data-te>మీ ఎంపికను ఎంచుకోండి</span>
+              <span data-kn>ನಿಮ್ಮ ಆಯ್ಕೆ ಆರಿಸಿ</span>
+            </div>
+
+            <div class="price-opt">
+              <div>
+                <div class="po-name">
+                  <span data-en>Prompt Only</span>
+                  <span data-te>ప్రాంప్ట్ మాత్రమే</span>
+                  <span data-kn>ಪ್ರಾಂಪ್ಟ್ ಮಾತ್ರ</span>
+                </div>
+                <div class="po-desc">
+                  <span data-en>Paste into Claude or ChatGPT yourself</span>
+                  <span data-te>Claude లేదా ChatGPT లో మీరే పేస్ట్ చేయండి</span>
+                  <span data-kn>Claude ಅಥವಾ ChatGPT ನಲ್ಲಿ ನೀವೇ ಪೇಸ್ಟ್ ಮಾಡಿ</span>
+                </div>
+              </div>
+              <div class="po-right">
+                <div class="po-price">₹199</div>
+              </div>
+            </div>
+
+            <div class="price-opt featured">
+              <div>
+                <div class="po-name">
+                  <span data-en>Ready PPT + Prompt</span>
+                  <span data-te>సిద్ధ PPT + ప్రాంప్ట్</span>
+                  <span data-kn>ಸಿದ್ಧ PPT + ಪ್ರಾಂಪ್ಟ್</span>
+                </div>
+                <div class="po-desc">
+                  <span data-en>Download, open in PowerPoint, present tomorrow</span>
+                  <span data-te>డౌన్‌లోడ్ చేసి PowerPoint లో తెరవండి, రేపు ప్రదర్శించండి</span>
+                  <span data-kn>ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ, PowerPoint ನಲ್ಲಿ ತೆರೆಯಿರಿ, ನಾಳೆ ಪ್ರಸ್ತುತಿ ಮಾಡಿ</span>
+                </div>
+              </div>
+              <div class="po-right">
+                <span class="po-best">Best</span>
+                <div class="po-price"><span class="was">₹799</span>₹499</div>
+              </div>
+            </div>
+
+            <div class="price-opt">
+              <div>
+                <div class="po-name">
+                  <span data-en>Full Kit</span>
+                  <span data-te>పూర్తి కిట్</span>
+                  <span data-kn>ಸಂಪೂರ್ಣ ಕಿಟ್</span>
+                </div>
+                <div class="po-desc">
+                  <span data-en>PPT + Prompt + Customisation Guide</span>
+                  <span data-te>PPT + ప్రాంప్ట్ + కస్టమైజేషన్ గైడ్</span>
+                  <span data-kn>PPT + ಪ್ರಾಂಪ್ಟ್ + ಕಸ್ಟಮೈಸೇಶನ್ ಗೈಡ್</span>
+                </div>
+              </div>
+              <div class="po-right">
+                <div class="po-price">₹699</div>
+              </div>
+            </div>
+
+            <button class="buy-btn disabled" onclick="showInstamojo()">
+              🔒
+              <span data-en>Buy via UPI — Instant Download</span>
+              <span data-te>UPI ద్వారా కొనండి — తక్షణ డౌన్‌లోడ్</span>
+              <span data-kn>UPI ಮೂಲಕ ಕೊಳ್ಳಿ — ತಕ್ಷಣ ಡೌನ್‌ಲೋಡ್</span>
+            </button>
+            <div class="instamojo-note" id="iNote">
+              <span data-en>⚙ Payment link coming soon — setting up Instamojo now. WhatsApp Ramya to buy today.</span>
+              <span data-te>⚙ చెల్లింపు లింక్ త్వరలో వస్తుంది — Instamojo సెటప్ అవుతోంది.</span>
+              <span data-kn>⚙ ಪಾವತಿ ಲಿಂಕ್ ಶೀಘ್ರದಲ್ಲೇ — Instamojo ಸೆಟಪ್ ಆಗುತ್ತಿದೆ.</span>
+            </div>
+            <div class="refund-pill">
+              ✓ <span data-en>7-day full refund · No questions asked</span>
+              <span data-te>7 రోజుల పూర్తి వాపసు · ప్రశ్నలు లేవు</span>
+              <span data-kn>7 ದಿನಗಳ ಸಂಪೂರ್ಣ ಮರುಪಾವತಿ · ಪ್ರಶ್ನೆಗಳಿಲ್ಲ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW TO USE ──────────────────────────────────────────────── -->
+  <section class="section howto-sec" id="howto">
+    <div class="container">
+      <div class="sec-eye">
+        <span data-en>How to Use</span>
+        <span data-te>ఎలా వాడాలి</span>
+        <span data-kn>ಹೇಗೆ ಬಳಸಬೇಕು</span>
+      </div>
+      <h2 class="sec-h reveal">
+        <span data-en>No Tech Skills Needed</span>
+        <span data-te>టెక్ నైపుణ్యాలు అవసరం లేదు</span>
+        <span data-kn>ತಂತ್ರಜ್ಞಾನ ಕೌಶಲ್ಯ ಅಗತ್ಯವಿಲ್ಲ</span>
+      </h2>
+      <p class="sec-sub reveal">
+        <span data-en>Whether you are a teacher, a speaker, or a professional — here is exactly what you do after buying.</span>
+        <span data-te>మీరు ఉపాధ్యాయుడు, స్పీకర్ లేదా నిపుణుడు అయినా — కొన్న తర్వాత ఏం చేయాలో ఇక్కడ ఉంది.</span>
+        <span data-kn>ನೀವು ಶಿಕ್ಷಕರು, ಸ್ಪೀಕರ್ ಅಥವಾ ವೃತ್ತಿಪರರಾಗಿರಲಿ — ಖರೀದಿಸಿದ ನಂತರ ಏನು ಮಾಡಬೇಕೆಂದು ಇಲ್ಲಿದೆ.</span>
+      </p>
+
+      <div class="steps-row">
+        <div class="step-card reveal">
+          <div class="step-n">1</div>
+          <div class="step-title">
+            <span data-en>Buy & Download</span>
+            <span data-te>కొనండి & డౌన్‌లోడ్</span>
+            <span data-kn>ಕೊಳ್ಳಿ & ಡೌನ್‌ಲೋಡ್</span>
+          </div>
+          <div class="step-desc">
+            <span data-en>Pay via UPI on Instamojo. Get an instant download link on your phone. No account, no password, no waiting.</span>
+            <span data-te>Instamojo లో UPI ద్వారా చెల్లించండి. మీ ఫోన్‌లో తక్షణ డౌన్‌లోడ్ లింక్ పొందండి.</span>
+            <span data-kn>Instamojo ನಲ್ಲಿ UPI ಮೂಲಕ ಪಾವತಿಸಿ. ನಿಮ್ಮ ಫೋನ್‌ನಲ್ಲಿ ತಕ್ಷಣ ಡೌನ್‌ಲೋಡ್ ಲಿಂಕ್ ಪಡೆಯಿರಿ.</span>
+          </div>
+          <div class="step-note">
+            <span data-en>Under 60 seconds</span>
+            <span data-te>60 సెకన్లలోపు</span>
+            <span data-kn>60 ಸೆಕೆಂಡ್‌ಗಿಂತ ಕಡಿಮೆ</span>
+          </div>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-n">2</div>
+          <div class="step-title">
+            <span data-en>If you bought the PPT</span>
+            <span data-te>PPT ಕೊಂಡರೆ</span>
+            <span data-kn>PPT ಖರೀದಿಸಿದರೆ</span>
+          </div>
+          <div class="step-desc">
+            <span data-en>Open the .pptx file in PowerPoint or Google Slides. Change the name on slide 2 to yours. You are ready to present.</span>
+            <span data-te>.pptx ఫైల్‌ను PowerPoint లో తెరవండి. స్లైడ్ 2 లో మీ పేరు మార్చండి. ప్రదర్శించడానికి సిద్ధంగా ఉన్నారు.</span>
+            <span data-kn>.pptx ಫೈಲ್ ತೆರೆಯಿರಿ. ಸ್ಲೈಡ್ 2 ರಲ್ಲಿ ನಿಮ್ಮ ಹೆಸರು ಬದಲಾಯಿಸಿ. ಪ್ರಸ್ತುತಿಗೆ ಸಿದ್ಧ.</span>
+          </div>
+          <div class="step-note">
+            <span data-en>No design skills needed</span>
+            <span data-te>డిజైన్ నైపుణ్యాలు అవసరం లేదు</span>
+            <span data-kn>ವಿನ್ಯಾಸ ಕೌಶಲ್ಯ ಅಗತ್ಯವಿಲ್ಲ</span>
+          </div>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-n">3</div>
+          <div class="step-title">
+            <span data-en>If you bought the Prompt</span>
+            <span data-te>ప్రాంప్ట్ కొంటే</span>
+            <span data-kn>ಪ್ರಾಂಪ್ಟ್ ಖರೀದಿಸಿದರೆ</span>
+          </div>
+          <div class="step-desc">
+            <span data-en>Open chatgpt.com or claude.ai — both free. Copy the prompt. Paste. Press Enter. Your full presentation appears in 30 seconds.</span>
+            <span data-te>chatgpt.com లేదా claude.ai తెరవండి. ప్రాంప్ట్ కాపీ చేసి పేస్ట్ చేయండి. 30 సెకన్లలో ప్రదర్శన వస్తుంది.</span>
+            <span data-kn>chatgpt.com ತೆರೆಯಿರಿ. ಪ್ರಾಂಪ್ಟ್ ಕಾಪಿ ಮಾಡಿ ಪೇಸ್ಟ್ ಮಾಡಿ. 30 ಸೆಕೆಂಡ್‌ನಲ್ಲಿ ಪ್ರಸ್ತುತಿ ಬರುತ್ತದೆ.</span>
+          </div>
+          <div class="step-note">
+            <span data-en>Works on mobile too</span>
+            <span data-te>మొబైల్‌లో కూడా పనిచేస్తుంది</span>
+            <span data-kn>ಮೊಬೈಲ್‌ನಲ್ಲೂ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ</span>
+          </div>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-n">4</div>
+          <div class="step-title">
+            <span data-en>Not happy? Full refund.</span>
+            <span data-te>సంతుష్టిగా లేదా? పూర్తి వాపసు.</span>
+            <span data-kn>ಸಂತೋಷವಿಲ್ಲವೇ? ಸಂಪೂರ್ಣ ಮರುಪಾವತಿ.</span>
+          </div>
+          <div class="step-desc">
+            <span data-en>WhatsApp Ramya within 7 days. Immediate full refund — no questions, no forms, no argument. Your trust matters more than the money.</span>
+            <span data-te>7 రోజులలో రమ్యకు WhatsApp చేయండి. తక్షణ పూర్తి వాపసు — ప్రశ్నలు లేవు, ఫారమ్‌లు లేవు.</span>
+            <span data-kn>7 ದಿನಗಳಲ್ಲಿ ರಮ್ಯಗೆ WhatsApp ಮಾಡಿ. ತಕ್ಷಣ ಸಂಪೂರ್ಣ ಮರುಪಾವತಿ — ಪ್ರಶ್ನೆಗಳಿಲ್ಲ.</span>
+          </div>
+          <div class="step-note" style="color:var(--green-ok)">
+            <span data-en>Your trust matters more than the money</span>
+            <span data-te>మీ నమ్మకం డబ్బు కంటే ముఖ్యం</span>
+            <span data-kn>ನಿಮ್ಮ ನಂಬಿಕೆ ಹಣಕ್ಕಿಂತ ಮುಖ್ಯ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HONEST NOTE ────────────────────────────────────────────── -->
+  <section class="section honest-sec">
+    <div class="container">
+      <div class="honest-box reveal">
+        <div class="honest-icon">🌱</div>
+        <div>
+          <div class="honest-title">
+            <span data-en>Growing honestly — one tested product at a time</span>
+            <span data-te>నిజాయితీగా పెరుగుతోంది — ఒక్కో పరీక్షించిన ఉత్పత్తి చొప్పున</span>
+            <span data-kn>ಪ್ರಾಮಾಣಿಕವಾಗಿ ಬೆಳೆಯುತ್ತಿದ್ದೇವೆ — ಒಂದೊಂದು ಪರೀಕ್ಷಿತ ಉತ್ಪನ್ನ</span>
+          </div>
+          <div class="honest-text">
+            <span data-en>This is our first product — tested, real, and ready. More professions (LIC agents, sales professionals, corporate trainers) and more prompt types (document prompts, image prompts) are being built and tested right now. We will add them only when they are genuinely ready — not before. Every product on this site will be something Ramya has personally tested and stands behind completely.</span>
+            <span data-te>ఇది మా మొదటి ఉత్పత్తి — పరీక్షించబడింది, నిజమైనది మరియు సిద్ధంగా ఉంది. మరిన్ని వృత్తులు (LIC ఏజెంట్లు, విక్రయదారులు, శిక్షకులు) మరియు మరిన్ని ప్రాంప్ట్ రకాలు (డాక్యుమెంట్ ప్రాంప్ట్లు, చిత్ర ప్రాంప్ట్లు) ఇప్పుడు నిర్మించబడుతున్నాయి. అవి నిజంగా సిద్ధంగా ఉన్నప్పుడు మాత్రమే జోడిస్తాము.</span>
+            <span data-kn>ಇದು ನಮ್ಮ ಮೊದಲ ಉತ್ಪನ್ನ — ಪರೀಕ್ಷಿಸಲಾಗಿದೆ, ನಿಜವಾದ ಮತ್ತು ಸಿದ್ಧ. ಹೆಚ್ಚಿನ ವೃತ್ತಿಗಳು ಮತ್ತು ಹೆಚ್ಚಿನ ಪ್ರಾಂಪ್ಟ್ ವಿಧಗಳನ್ನು ಈಗ ನಿರ್ಮಿಸಲಾಗುತ್ತಿದೆ. ಅವು ನಿಜವಾಗಿ ಸಿದ್ಧವಾದಾಗ ಮಾತ್ರ ಸೇರಿಸುತ್ತೇವೆ.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ───────────────────────────────────────────────────── -->
+  <section class="section about-sec dark-sec" id="about">
+    <div class="container">
+      <div class="sec-eye">
+        <span data-en>The Person Behind This</span>
+        <span data-te>దీని వెనక ఉన్న వ్యక్తి</span>
+        <span data-kn>ಇದರ ಹಿಂದಿನ ವ್ಯಕ್ತಿ</span>
+      </div>
+
+      <div class="about-grid">
+        <div style="position:relative">
+          <div class="about-photo">
+            <div class="about-initial">R</div>
+            <div class="about-photo-note">
+              <span data-en>Your photo goes here</span>
+              <span data-te>మీ ఫోటో ఇక్కడ ఉంటుంది</span>
+              <span data-kn>ನಿಮ್ಮ ಫೋಟೋ ಇಲ್ಲಿ</span>
+            </div>
+          </div>
+          <div class="about-badge">
+            ICI Speaker<br/>QA Architect
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="about-name">Ramya</div>
+          <div class="about-role">
+            <span data-en>Senior QA Architect · ICI Speaker · LIC & Kotak Agent<br/>Founder, Ramya Inspires · Bengaluru, India</span>
+            <span data-te>సీనియర్ QA ఆర్కిటెక్ట్ · ICI స్పీకర్ · LIC & కోటక్ ఏజెంట్<br/>వ్యవస్థాపకురాలు, రమ్య ఇన్స్పైర్స్ · బెంగళూరు</span>
+            <span data-kn>ಸೀನಿಯರ್ QA ಆರ್ಕಿಟೆಕ್ಟ್ · ICI ಸ್ಪೀಕರ್ · LIC & ಕೋಟಕ್ ಏಜೆಂಟ್<br/>ಸಂಸ್ಥಾಪಕಿ, ರಮ್ಯ ಇನ್‌ಸ್ಪೈರ್ಸ್ · ಬೆಂಗಳೂರು</span>
+          </div>
+          <div class="about-mission">
+            <p>
+              <span data-en>"To help children dream bigger, help women believe in themselves, help families grow stronger, and help people discover the best version of themselves."</span>
+              <span data-te>"పిల్లలు పెద్ద కలలు కనేలా, మహిళలు తమపై నమ్మకం ఉంచేలా, కుటుంబాలు మరింత బలంగా పెరిగేలా మరియు ప్రజలు తమలోని ఉత్తమ సంస్కరణను కనుగొనేలా సహాయపడటం."</span>
+              <span data-kn>"ಮಕ್ಕಳು ದೊಡ್ಡ ಕನಸು ಕಾಣಲು, ಮಹಿಳೆಯರು ತಮ್ಮಲ್ಲಿ ನಂಬಿಕೆ ಇಡಲು, ಕುಟುಂಬಗಳು ಬಲವಾಗಿ ಬೆಳೆಯಲು ಮತ್ತು ಜನರು ತಮ್ಮ ಅತ್ಯುತ್ತಮ ಆವೃತ್ತಿಯನ್ನು ಕಂಡುಹಿಡಿಯಲು ಸಹಾಯ ಮಾಡುವುದು."</span>
+            </p>
+          </div>
+          <p class="about-body">
+            <span data-en>I built Ramya Inspires because I kept watching teachers, speakers and professionals spend entire weekends preparing for sessions that could have been ready in 20 minutes. I have been an ICI speaker, a LIC agent, a QA professional and a small business owner — I understand the preparation pressure from every angle. Everything I sell here is something I have personally created and tested. Nothing is assumed. Nothing is fake. Your time is valuable. That is why I am here.</span>
+            <span data-te>ఉపాధ్యాయులు, స్పీకర్లు మరియు నిపుణులు 20 నిమిషాల్లో సిద్ధమయ్యే సెషన్లకు వారాంతాలు మొత్తం వెచ్చించడం చూస్తూ నేను రమ్య ఇన్స్పైర్స్ నిర్మించాను. నేను ICI స్పీకర్‌ని, LIC ఏజెంట్‌ని — ప్రతి కోణం నుండి సన్నాహక ఒత్తిడిని అర్థం చేసుకుంటాను.</span>
+            <span data-kn>ಶಿಕ್ಷಕರು, ಸ್ಪೀಕರ್‌ಗಳು ಮತ್ತು ವೃತ್ತಿಪರರು 20 ನಿಮಿಷದಲ್ಲಿ ಸಿದ್ಧವಾಗಬಹುದಾದ ಸೆಷನ್‌ಗಳಿಗೆ ವಾರಾಂತ್ಯಗಳನ್ನು ಕಳೆಯುವುದನ್ನು ನೋಡಿ ನಾನು ರಮ್ಯ ಇನ್‌ಸ್ಪೈರ್ಸ್ ನಿರ್ಮಿಸಿದೆ. ನಾನು ICI ಸ್ಪೀಕರ್, LIC ಏಜೆಂಟ್ — ಪ್ರತಿ ದೃಷ್ಟಿಕೋನದಿಂದ ತಯಾರಿ ಒತ್ತಡ ಅರ್ಥ ಮಾಡಿಕೊಳ್ಳುತ್ತೇನೆ.</span>
+          </p>
+          <div class="cred-pills">
+            <span class="cred-pill">10+ Years QA</span>
+            <span class="cred-pill">ICI Training Ladder</span>
+            <span class="cred-pill">LIC & Kotak Agent</span>
+            <span class="cred-pill">SVLB Business Owner</span>
+            <span class="cred-pill">Telugu · Kannada · English</span>
+            <span class="cred-pill">Bengaluru, India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Ramya Inspires</div>
+      <div class="footer-links">
+        <a href="#sample">
+          <span data-en>Free Sample</span>
+          <span data-te>ఉచిత నమూనా</span>
+          <span data-kn>ಉಚಿತ ಮಾದರಿ</span>
+        </a>
+        <a href="#product">
+          <span data-en>Product</span>
+          <span data-te>ఉత్పత్తి</span>
+          <span data-kn>ಉತ್ಪನ್ನ</span>
+        </a>
+        <a href="#howto">
+          <span data-en>How to Use</span>
+          <span data-te>ఎలా వాడాలి</span>
+          <span data-kn>ಹೇಗೆ ಬಳಸಬೇಕು</span>
+        </a>
+        <a href="#about">
+          <span data-en>About Ramya</span>
+          <span data-te>రమ్య గురించి</span>
+          <span data-kn>ರಮ್ಯ ಬಗ್ಗೆ</span>
+        </a>
+      </div>
+      <div class="footer-copy">
+        © 2026 Ramya Inspires · ramyainspires.com · Built with honesty for Indian professionals · Telugu · Kannada · English
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ─── LANGUAGE SWITCH ─────────────────────────────────────── */
+    function setLang(lang) {
+      document.body.className = 'lang-' + lang;
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('btn-' + lang).classList.add('active');
+    }
+
+    /* ─── MOBILE NAV ──────────────────────────────────────────── */
+    function toggleMobileNav() {
+      document.getElementById('mobileNav').classList.toggle('open');
+    }
+    function closeMobileNav() {
+      document.getElementById('mobileNav').classList.remove('open');
+    }
+
+    /* ─── TYPING ANIMATION ────────────────────────────────────── */
+    const PROMPT_TEXT = `"Act as a TED-quality Public Speaking Coach, NLP Trainer, and Learning Experience Designer with 20 years of experience.
+
+Create a powerful opening slide for a Voice Modulation workshop for Indian school teachers. Include: a bold headline, an interactive activity where teachers say 'I am proud of you' in 5 different emotions, the scientific reason why voice matters more than words, and speaker notes in a warm conversational tone.
+
+Make it so memorable that every teacher wants to try it with their students the next morning."`;
+
+    let typeIndex = 0;
+    const typeTarget = document.getElementById('typeTarget');
+
+    function typeStep() {
+      if (typeIndex < PROMPT_TEXT.length) {
+        // insert char before cursor
+        const cursor = typeTarget.querySelector('.plc-cursor');
+        const char = document.createTextNode(PROMPT_TEXT[typeIndex]);
+        typeTarget.insertBefore(char, cursor);
+        typeIndex++;
+        // vary speed for natural feel
+        const delay = PROMPT_TEXT[typeIndex - 1] === '\n' ? 80 :
+                      PROMPT_TEXT[typeIndex - 1] === '.' ? 120 :
+                      Math.random() * 18 + 12;
+        setTimeout(typeStep, delay);
+      }
+    }
+    // start typing after 800ms
+    setTimeout(typeStep, 800);
+
+    /* ─── COPY BUTTONS ────────────────────────────────────────── */
+    function copyHeroPrompt() {
+      navigator.clipboard.writeText(PROMPT_TEXT.replace(/"/g, '')).then(() => {
+        const btn = document.getElementById('heroCopyBtn');
+        btn.classList.add('done');
+        btn.innerHTML = '✓ Copied!';
+        setTimeout(() => {
+          btn.classList.remove('done');
+          btn.innerHTML = '📋 <span data-en>Copy Prompt</span><span data-te>ప్రాంప్ట్ కాపీ</span><span data-kn>ಪ್ರಾಂಪ್ಟ್ ಕಾಪಿ</span>';
+          setLang(document.body.className.replace('lang-', ''));
+        }, 2500);
+      });
+    }
+
+    function copyFullPrompt() {
+      const text = document.getElementById('fullPromptText').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('fullCopyBtn');
+        btn.classList.add('done');
+        btn.textContent = '✓ Copied!';
+        setTimeout(() => {
+          btn.classList.remove('done');
+          btn.innerHTML = '📋 <span data-en>Copy Prompt</span><span data-te>ప్రాంప్ట్ కాపీ</span><span data-kn>ಪ್ರಾಂಪ್ಟ್ ಕಾಪಿ</span>';
+          setLang(document.body.className.replace('lang-', ''));
+        }, 2500);
+      });
+    }
+
+    /* ─── INSTAMOJO PLACEHOLDER ───────────────────────────────── */
+    function showInstamojo() {
+      alert('Payment link coming soon! To buy today, WhatsApp Ramya directly. Contact details in the About section.');
+    }
+
+    /* ─── SCROLL REVEAL ───────────────────────────────────────── */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationDelay = (i * 0.07) + 's';
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
