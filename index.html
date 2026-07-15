@@ -6,6 +6,19 @@
   <title>SU@Ramiya Inspires — AI Prompts for Indian Professionals</title>
   <meta name="description" content="SU@Ramiya Inspires — Expert AI prompts and ready-made presentations for Indian teachers, speakers and professionals. In English, Telugu and Kannada. By Ramya, ICI Speaker & QA Architect, Bengaluru." />
   <meta name="keywords" content="AI prompts India, PPT prompts teachers, voice modulation workshop, Telugu AI prompts, Kannada prompts, ICI speaker resources" />
+
+  <!-- ── OPEN GRAPH / SOCIAL SHARE (WhatsApp, Instagram, LinkedIn, Facebook) ── -->
+  <meta property="og:title" content="SU@Ramiya Inspires — AI Prompts for Indian Professionals" />
+  <meta property="og:description" content="Save 20 hours of preparation. Expert AI prompts and ready-made presentations for teachers, speakers and professionals. Telugu · Kannada · English" />
+  <meta property="og:image" content="https://ramyainspires.com/og-image.jpg" />
+  <meta property="og:url" content="https://ramyainspires.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SU@Ramiya Inspires" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SU@Ramiya Inspires — AI Prompts for Indian Professionals" />
+  <meta name="twitter:description" content="Save 20 hours of preparation. Expert AI prompts and ready-made presentations for teachers, speakers and professionals. Telugu · Kannada · English" />
+  <meta name="twitter:image" content="https://ramyainspires.com/og-image.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
@@ -888,6 +901,90 @@
       background: none; border: none; text-align: left; padding: 0.25rem 0;
     }
     .mobile-nav a:hover { color: var(--g2); }
+
+    /* ─── NEW (Phase 2) — EMAIL VALIDATION / SUCCESS ─────────── */
+    .email-field.error { border-color: #EF4444; background: rgba(239,68,68,0.06); }
+    .email-error {
+      display: none; color: #FCA5A5; font-size: 0.75rem;
+      margin: -0.4rem 0 0.6rem 0.15rem;
+    }
+    .email-error.show { display: block; }
+    .email-success {
+      display: none; text-align: center;
+      background: rgba(22,163,74,0.1);
+      border: 1px solid rgba(22,163,74,0.35);
+      border-radius: 14px; padding: 1.75rem 1.5rem;
+    }
+    .email-success.show { display: block; animation: fadeUp 0.5s ease both; }
+    .es-emoji { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .es-title { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--g2); margin-bottom: 0.5rem; }
+    .es-text { font-size: 0.88rem; color: rgba(200,240,216,0.8); line-height: 1.7; }
+    .es-text b { color: var(--white); }
+
+    /* ─── NEW (Phase 2) — WHATSAPP FALLBACK LINK ─────────────── */
+    .wa-fallback {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      margin-top: 0.75rem; font-size: 0.8rem; font-weight: 600;
+      color: #25D366; text-decoration: none;
+    }
+    .wa-fallback:hover { color: #4ae585; text-decoration: underline; }
+
+    /* ─── NEW (Phase 2) — CLICKABLE COMING-SOON CARDS ────────── */
+    .prof-card.coming { cursor: pointer; }
+    .prof-card.coming:hover {
+      transform: translateY(-2px); opacity: 0.8;
+      border-color: rgba(196,152,60,0.4);
+      box-shadow: var(--shadow);
+    }
+
+    /* ─── NEW (Phase 2) — SCROLL-TO-TOP BUTTON ───────────────── */
+    .scroll-top {
+      position: fixed; bottom: 1.75rem; left: 1.75rem; z-index: 998;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--g1); color: var(--e0);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.35rem; line-height: 1;
+      box-shadow: 0 4px 18px rgba(196,152,60,0.4);
+      opacity: 0; visibility: hidden; transform: translateY(10px);
+      transition: opacity 0.25s, transform 0.25s, visibility 0.25s, background 0.2s;
+    }
+    .scroll-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .scroll-top:hover { background: var(--g2); }
+    @media (max-width: 600px) { .scroll-top { bottom: 1.25rem; left: 1.25rem; width: 44px; height: 44px; } }
+
+    /* ─── NEW (Phase 2) — COMING-SOON MODAL ──────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(5,26,15,0.75);
+      display: none; align-items: center; justify-content: center;
+      padding: 1.25rem;
+    }
+    .modal-overlay.show { display: flex; animation: fadeUp 0.3s ease both; }
+    .modal-box {
+      background: linear-gradient(150deg, var(--e1), var(--e2));
+      border: 1px solid rgba(196,152,60,0.3);
+      border-radius: 18px; padding: 2rem;
+      max-width: 400px; width: 100%;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+    .modal-close {
+      position: absolute; top: 0.9rem; right: 1rem;
+      background: none; border: none; color: rgba(200,240,216,0.55);
+      font-size: 1.4rem; cursor: pointer; line-height: 1;
+    }
+    .modal-close:hover { color: var(--white); }
+    .modal-emoji { font-size: 2.2rem; margin-bottom: 0.6rem; }
+    .modal-title {
+      font-family: 'DM Serif Display', serif; font-size: 1.3rem;
+      color: var(--g2); margin-bottom: 0.5rem; line-height: 1.3; padding-right: 1.5rem;
+    }
+    .modal-text { font-size: 0.85rem; color: rgba(200,240,216,0.75); line-height: 1.6; margin-bottom: 1.25rem; }
+    .modal-box .email-field { margin-bottom: 0.75rem; }
+    .modal-box .email-submit { margin-top: 0.25rem; }
+    .modal-success { display: none; text-align: center; color: var(--mint); font-size: 0.9rem; line-height: 1.7; padding: 0.5rem 0; }
+    .modal-success.show { display: block; }
   </style>
 </head>
 
@@ -946,10 +1043,21 @@
 
   <!-- mobile nav -->
   <div class="mobile-nav" id="mobileNav">
-    <a href="#sample" onclick="closeMobileNav()">Free Sample</a>
-    <a href="#product" onclick="closeMobileNav()">Product</a>
-    <a href="#howto" onclick="closeMobileNav()">How to Use</a>
-    <a href="#about" onclick="closeMobileNav()">About</a>
+    <a href="#professions" onclick="closeMobileNav()">
+      <span data-en>Professions</span><span data-te>వృత్తులు</span><span data-kn>ವೃತ್ತಿಗಳು</span>
+    </a>
+    <a href="#sample" onclick="closeMobileNav()">
+      <span data-en>Free Sample</span><span data-te>ఉచిత నమూనా</span><span data-kn>ಉಚಿತ ಮಾದರಿ</span>
+    </a>
+    <a href="#product" onclick="closeMobileNav()">
+      <span data-en>Product</span><span data-te>ఉత్పత్తి</span><span data-kn>ಉತ್ಪನ್ನ</span>
+    </a>
+    <a href="#howto" onclick="closeMobileNav()">
+      <span data-en>How to Use</span><span data-te>ఎలా వాడాలి</span><span data-kn>ಹೇಗೆ ಬಳಸಬೇಕು</span>
+    </a>
+    <a href="#about" onclick="closeMobileNav()">
+      <span data-en>About</span><span data-te>గురించి</span><span data-kn>ಬಗ್ಗೆ</span>
+    </a>
   </div>
 
   <!-- ── HERO ──────────────────────────────────────────────────── -->
@@ -1087,7 +1195,11 @@
   <!-- ── PROFESSION SELECTOR ───────────────────────────────────── -->
   <section class="section profession-sec" id="professions">
     <div class="container">
-      <div class="sec-eye">Who Is This For</div>
+      <div class="sec-eye">
+        <span data-en>Who Is This For</span>
+        <span data-te>ఇది ఎవరి కోసం</span>
+        <span data-kn>ಇದು ಯಾರಿಗಾಗಿ</span>
+      </div>
       <h2 class="sec-h reveal">
         <span data-en>Find Your Profession. Find Your Prompts.</span>
         <span data-te>మీ వృత్తిని కనుగొనండి. మీ ప్రాంప్ట్లు కనుగొనండి.</span>
@@ -1141,7 +1253,7 @@
           </div>
         </div>
 
-        <div class="prof-card coming reveal">
+        <div class="prof-card coming reveal" onclick="openNotifyModal('LIC & Insurance Agents')">
           <span class="prof-badge badge-soon">Coming Soon</span>
           <div class="prof-emoji">🛡️</div>
           <div class="prof-name">
@@ -1161,7 +1273,7 @@
           </div>
         </div>
 
-        <div class="prof-card coming reveal">
+        <div class="prof-card coming reveal" onclick="openNotifyModal('Sales Professionals')">
           <span class="prof-badge badge-soon">Coming Soon</span>
           <div class="prof-emoji">💼</div>
           <div class="prof-name">
@@ -1181,7 +1293,7 @@
           </div>
         </div>
 
-        <div class="prof-card coming reveal">
+        <div class="prof-card coming reveal" onclick="openNotifyModal('Women Entrepreneurs')">
           <span class="prof-badge badge-soon">Coming Soon</span>
           <div class="prof-emoji">🌸</div>
           <div class="prof-name">
@@ -1201,7 +1313,7 @@
           </div>
         </div>
 
-        <div class="prof-card coming reveal">
+        <div class="prof-card coming reveal" onclick="openNotifyModal('Corporate Trainers')">
           <span class="prof-badge badge-soon">Coming Soon</span>
           <div class="prof-emoji">🏢</div>
           <div class="prof-name">
@@ -1239,8 +1351,8 @@
         <span data-kn>ಈ ಪ್ರಾಂಪ್ಟ್ ಈಗಲೇ ಪ್ರಯತ್ನಿಸಿ. ಇದು ಉಚಿತ.</span>
       </h2>
       <p class="sec-sub reveal">
-        <span data-en>Copy this prompt, paste it into ChatGPT or Claude, and watch a complete presentation appear in 30 seconds. This is 1 of 20 prompts inside the full pack.</span>
-        <span data-te>ఈ ప్రాంప్ట్ కాపీ చేసి ChatGPT లేదా Claude లో పేస్ట్ చేయండి. 30 సెకన్లలో పూర్తి ప్రదర్శన వస్తుంది. పూర్తి ప్యాక్‌లో 20 ప్రాంప్ట్‌లలో ఇది 1.</span>
+        <span data-en>Copy this prompt, paste it into ChatGPT or Claude, and watch a complete presentation appear in 30 seconds. This is a free sample from the full 21-slide pack.</span>
+        <span data-te>ఈ ప్రాంప్ట్ కాపీ చేసి ChatGPT లేదా Claude లో పేస్ట్ చేయండి. 30 సెకన్లలో పూర్తి ప్రదర్శన వస్తుంది. ఇది పూర్తి 21-స్లైడ్ ప్యాక్ నుండి ఉచిత నమూనా.</span>
         <span data-kn>ಈ ಪ್ರಾಂಪ್ಟ್ ಕಾಪಿ ಮಾಡಿ ChatGPT ಅಥವಾ Claude ನಲ್ಲಿ ಪೇಸ್ಟ್ ಮಾಡಿ. 30 ಸೆಕೆಂಡ್‌ನಲ್ಲಿ ಸಂಪೂರ್ಣ ಪ್ರಸ್ತುತಿ ಬರುತ್ತದೆ.</span>
       </p>
 
@@ -1314,7 +1426,7 @@
             </div>
             <div class="rc-note">
               <span>ℹ</span>
-              <span data-en>These are approximate previews. Your actual ChatGPT or Claude output will include full content, speaker notes, activities, and Indian stories for all 20 slides.</span>
+              <span data-en>These are approximate previews. Your actual ChatGPT or Claude output will include full content, speaker notes, activities, and Indian stories for all 21 slides.</span>
               <span data-te>ఇవి సుమారు ప్రివ్యూలు. మీ ChatGPT అవుట్‌పుట్ పూర్తి స్పీకర్ నోట్లు మరియు కార్యకలాపాలను కలిగి ఉంటుంది.</span>
               <span data-kn>ಇವು ಅಂದಾಜು ಪ್ರಿವ್ಯೂಗಳು. ನಿಮ್ಮ ನಿಜವಾದ ಔಟ್‌ಪುಟ್ ಸಂಪೂರ್ಣ ವಿಷಯ ಮತ್ತು ಸ್ಪೀಕರ್ ನೋಟ್‌ಗಳನ್ನು ಒಳಗೊಂಡಿರುತ್ತದೆ.</span>
             </div>
@@ -1472,16 +1584,167 @@
               </div>
             </div>
 
-            <button class="buy-btn disabled" onclick="showInstamojo()">
+            <button class="buy-btn disabled" data-instamojo="" onclick="showInstamojo()">
               🔒
               <span data-en>Buy via UPI — Instant Download</span>
               <span data-te>UPI ద్వారా కొనండి — తక్షణ డౌన్‌లోడ్</span>
               <span data-kn>UPI ಮೂಲಕ ಕೊಳ್ಳಿ — ತಕ್ಷಣ ಡೌನ್‌ಲೋಡ್</span>
             </button>
+            <a class="wa-fallback" href="https://wa.me/919945411489?text=Hi%20Ramya!%20I%20want%20to%20buy%20the%20Voice%20Modulation%20PPT%20pack%20for%20%E2%82%B9499.%20Please%20share%20the%20payment%20link." target="_blank" rel="noopener">
+              💬 <span data-en>OR buy via WhatsApp — click to chat</span>
+              <span data-te>లేదా WhatsApp ద్వారా కొనండి — చాట్ చేయండి</span>
+              <span data-kn>ಅಥವಾ WhatsApp ಮೂಲಕ ಕೊಳ್ಳಿ — ಚಾಟ್ ಮಾಡಿ</span>
+            </a>
             <div class="instamojo-note" id="iNote">
               <span data-en>⚙ Payment link coming soon — setting up Instamojo now. WhatsApp Ramya to buy today.</span>
               <span data-te>⚙ చెల్లింపు లింక్ త్వరలో వస్తుంది — Instamojo సెటప్ అవుతోంది.</span>
               <span data-kn>⚙ ಪಾವತಿ ಲಿಂಕ್ ಶೀಘ್ರದಲ್ಲೇ — Instamojo ಸೆಟಪ್ ಆಗುತ್ತಿದೆ.</span>
+            </div>
+            <div class="refund-pill">
+              ✓ <span data-en>7-day full refund · No questions asked</span>
+              <span data-te>7 రోజుల పూర్తి వాపసు · ప్రశ్నలు లేవు</span>
+              <span data-kn>7 ದಿನಗಳ ಸಂಪೂರ್ಣ ಮರುಪಾವತಿ · ಪ್ರಶ್ನೆಗಳಿಲ್ಲ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 — Top Tier AI Prompt Pack (PDF, all 5 mega prompts) -->
+      <div class="product-card reveal">
+        <div class="pc-header">
+          <div>
+            <div class="pc-for">✦
+              <span data-en>For Teachers, Speakers, LIC Agents, Sales & Women Entrepreneurs</span>
+              <span data-te>ఉపాధ్యాయులు, స్పీకర్లు, LIC ఏజెంట్లు, సేల్స్ & మహిళా వ్యాపారవేత్తలకు</span>
+              <span data-kn>ಶಿಕ್ಷಕರು, ಸ್ಪೀಕರ್‌ಗಳು, LIC ಏಜೆಂಟ್‌ಗಳು, ಸೇಲ್ಸ್ & ಮಹಿಳಾ ಉದ್ಯಮಿಗಳಿಗೆ</span>
+            </div>
+            <div class="pc-title">
+              <span data-en>Top Tier AI Prompt Pack — All 5 Mega Prompts</span>
+              <span data-te>టాప్ టైర్ AI ప్రాంప్ట్ ప్యాక్ — మొత్తం 5 మెగా ప్రాంప్ట్లు</span>
+              <span data-kn>ಟಾಪ್ ಟೈರ್ AI ಪ್ರಾಂಪ್ಟ್ ಪ್ಯಾಕ್ — ಎಲ್ಲಾ 5 ಮೆಗಾ ಪ್ರಾಂಪ್ಟ್‌ಗಳು</span>
+            </div>
+          </div>
+          <div class="pc-slides">📄
+            <span data-en>5 mega prompts · EN · Telugu · Kannada</span>
+            <span data-te>5 మెగా ప్రాంప్ట్లు · ఇంగ్లీష్ · తెలుగు · కన్నడ</span>
+            <span data-kn>5 ಮೆಗಾ ಪ್ರಾಂಪ್ಟ್‌ಗಳು · ಇಂಗ್ಲಿಷ್ · ತೆಲುಗು · ಕನ್ನಡ</span>
+          </div>
+        </div>
+
+        <div class="pc-body">
+          <div class="pc-left">
+            <ul class="includes-list">
+              <li><span class="inc-mark">1</span>
+                <span data-en>Voice Modulation Workshop — full 20-slide workshop prompt</span>
+                <span data-te>వాయిస్ మాడ్యులేషన్ వర్క్‌షాప్ — పూర్తి 20-స్లైడ్ ప్రాంప్ట్</span>
+                <span data-kn>ವಾಯ್ಸ್ ಮಾಡ್ಯುಲೇಷನ್ ವರ್ಕ್‌ಶಾಪ್ — ಸಂಪೂರ್ಣ 20-ಸ್ಲೈಡ್ ಪ್ರಾಂಪ್ಟ್</span>
+              </li>
+              <li><span class="inc-mark">2</span>
+                <span data-en>LIC Agent Sales Conversation Pack — scripts + 15 objections</span>
+                <span data-te>LIC ఏజెంట్ సేల్స్ ప్యాక్ — స్క్రిప్ట్లు + 15 అభ్యంతరాలు</span>
+                <span data-kn>LIC ಏಜೆಂಟ್ ಸೇಲ್ಸ್ ಪ್ಯಾಕ್ — ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು + 15 ಆಕ್ಷೇಪಣೆಗಳು</span>
+              </li>
+              <li><span class="inc-mark">3</span>
+                <span data-en>Confident Public Speaking — stage fear to standing ovation</span>
+                <span data-te>ఆత్మవిశ్వాస ప్రసంగం — వేదిక భయం నుండి చప్పట్లు వరకు</span>
+                <span data-kn>ಆತ್ಮವಿಶ್ವಾಸದ ಭಾಷಣ — ವೇದಿಕೆ ಭಯದಿಂದ ಚಪ್ಪಾಳೆವರೆಗೆ</span>
+              </li>
+              <li><span class="inc-mark">4</span>
+                <span data-en>Lesson Plan Creator for Teachers — CBSE-aligned, ready to teach</span>
+                <span data-te>ఉపాధ్యాయులకు పాఠ్య ప్రణాళిక సృష్టికర్త — CBSE ప్రకారం</span>
+                <span data-kn>ಶಿಕ್ಷಕರಿಗೆ ಪಾಠ ಯೋಜನೆ ರಚನೆಕಾರ — CBSE ಪ್ರಕಾರ</span>
+              </li>
+              <li><span class="inc-mark">5</span>
+                <span data-en>Women Entrepreneur Instagram Content Pack — 30-day plan</span>
+                <span data-te>మహిళా వ్యాపారవేత్త Instagram కంటెంట్ ప్యాక్ — 30 రోజుల ప్రణాళిక</span>
+                <span data-kn>ಮಹಿಳಾ ಉದ್ಯಮಿ Instagram ವಿಷಯ ಪ್ಯಾಕ್ — 30 ದಿನಗಳ ಯೋಜನೆ</span>
+              </li>
+              <li><span class="inc-mark">✦</span>
+                <span data-en>Every prompt in English + Telugu + Kannada — works in Claude, ChatGPT & Gemini</span>
+                <span data-te>ప్రతి ప్రాంప్ట్ ఇంగ్లీష్ + తెలుగు + కన్నడలో — Claude, ChatGPT & Gemini లో పనిచేస్తుంది</span>
+                <span data-kn>ಪ್ರತಿ ಪ್ರಾಂಪ್ಟ್ ಇಂಗ್ಲಿಷ್ + ತೆಲುಗು + ಕನ್ನಡದಲ್ಲಿ — Claude, ChatGPT & Gemini ನಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ</span>
+              </li>
+              <li><span class="inc-mark">✦</span>
+                <span data-en>Instant PDF download — no account, no waiting</span>
+                <span data-te>తక్షణ PDF డౌన్‌లోడ్ — అకౌంట్ అవసరం లేదు</span>
+                <span data-kn>ತಕ್ಷಣ PDF ಡೌನ್‌ಲೋಡ್ — ಖಾತೆ ಅಗತ್ಯವಿಲ್ಲ</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pc-right">
+            <div class="options-label">
+              <span data-en>Choose Your Option</span>
+              <span data-te>మీ ఎంపికను ఎంచుకోండి</span>
+              <span data-kn>ನಿಮ್ಮ ಆಯ್ಕೆ ಆರಿಸಿ</span>
+            </div>
+
+            <div class="price-opt">
+              <div>
+                <div class="po-name">
+                  <span data-en>Single Prompt PDF</span>
+                  <span data-te>ఒక ప్రాంప్ట్ PDF</span>
+                  <span data-kn>ಒಂದು ಪ್ರಾಂಪ್ಟ್ PDF</span>
+                </div>
+                <div class="po-desc">
+                  <span data-en>Any one of the 5 prompts (PDF)</span>
+                  <span data-te>5లో ఏదైనా ఒక ప్రాంప్ట్ (PDF)</span>
+                  <span data-kn>5 ರಲ್ಲಿ ಯಾವುದೇ ಒಂದು ಪ್ರಾಂಪ್ಟ್ (PDF)</span>
+                </div>
+              </div>
+              <div class="po-right"><div class="po-price">₹299</div></div>
+            </div>
+
+            <div class="price-opt featured">
+              <div>
+                <div class="po-name">
+                  <span data-en>All 5 Mega Prompts</span>
+                  <span data-te>మొత్తం 5 మెగా ప్రాంప్ట్లు</span>
+                  <span data-kn>ಎಲ್ಲಾ 5 ಮೆಗಾ ಪ್ರಾಂಪ್ಟ್‌ಗಳು</span>
+                </div>
+                <div class="po-desc">
+                  <span data-en>Complete PDF pack — all 5 prompts</span>
+                  <span data-te>పూర్తి PDF ప్యాక్ — మొత్తం 5 ప్రాంప్ట్లు</span>
+                  <span data-kn>ಸಂಪೂರ್ಣ PDF ಪ್ಯಾಕ್ — ಎಲ್ಲಾ 5 ಪ್ರಾಂಪ್ಟ್‌ಗಳು</span>
+                </div>
+              </div>
+              <div class="po-right">
+                <span class="po-best">Best</span>
+                <div class="po-price"><span class="was">₹999</span>₹499</div>
+              </div>
+            </div>
+
+            <div class="price-opt">
+              <div>
+                <div class="po-name">
+                  <span data-en>Prompts + PPT Bundle</span>
+                  <span data-te>ప్రాంప్ట్లు + PPT బండిల్</span>
+                  <span data-kn>ಪ್ರಾಂಪ್ಟ್‌ಗಳು + PPT ಬಂಡಲ್</span>
+                </div>
+                <div class="po-desc">
+                  <span data-en>All 5 prompts + Voice Modulation PPT</span>
+                  <span data-te>మొత్తం 5 ప్రాంప్ట్లు + వాయిస్ మాడ్యులేషన్ PPT</span>
+                  <span data-kn>ಎಲ್ಲಾ 5 ಪ್ರಾಂಪ್ಟ್‌ಗಳು + ವಾಯ್ಸ್ ಮಾಡ್ಯುಲೇಷನ್ PPT</span>
+                </div>
+              </div>
+              <div class="po-right"><div class="po-price">₹699</div></div>
+            </div>
+
+            <button class="buy-btn disabled" data-download="" onclick="showPromptPack()">
+              📄
+              <span data-en>Download the Prompt Pack</span>
+              <span data-te>ప్రాంప్ట్ ప్యాక్ డౌన్‌లోడ్ చేయండి</span>
+              <span data-kn>ಪ್ರಾಂಪ್ಟ್ ಪ್ಯಾಕ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ</span>
+            </button>
+            <a class="wa-fallback" href="https://wa.me/919945411489?text=Hi%20Ramya!%20I%20want%20to%20buy%20the%20Top%20Tier%20AI%20Prompt%20Pack%20(all%205%20prompts)%20for%20%E2%82%B9499.%20Please%20share%20the%20payment%20link." target="_blank" rel="noopener">
+              💬 <span data-en>OR buy via WhatsApp — click to chat</span>
+              <span data-te>లేదా WhatsApp ద్వారా కొనండి — చాట్ చేయండి</span>
+              <span data-kn>ಅಥವಾ WhatsApp ಮೂಲಕ ಕೊಳ್ಳಿ — ಚಾಟ್ ಮಾಡಿ</span>
+            </a>
+            <div class="instamojo-note">
+              <span data-en>⚙ Download link coming soon — WhatsApp Ramya to buy today.</span>
+              <span data-te>⚙ డౌన్‌లోడ్ లింక్ త్వరలో — కొనడానికి రమ్యకు WhatsApp చేయండి.</span>
+              <span data-kn>⚙ ಡೌನ್‌ಲೋಡ್ ಲಿಂಕ್ ಶೀಘ್ರದಲ್ಲೇ — ಕೊಳ್ಳಲು ರಮ್ಯಗೆ WhatsApp ಮಾಡಿ.</span>
             </div>
             <div class="refund-pill">
               ✓ <span data-en>7-day full refund · No questions asked</span>
@@ -1617,7 +1880,11 @@
   <!-- ── EMAIL CAPTURE ─────────────────────────────────────────── -->
   <section class="section email-sec dark-sec" id="freegift">
     <div class="container">
-      <div class="sec-eye">Free Gift — No Strings Attached</div>
+      <div class="sec-eye">
+        <span data-en>Free Gift — No Strings Attached</span>
+        <span data-te>ఉచిత బహుమతి — ఎలాంటి షరతులు లేవు</span>
+        <span data-kn>ಉಚಿತ ಉಡುಗೊರೆ — ಯಾವುದೇ ಷರತ್ತುಗಳಿಲ್ಲ</span>
+      </div>
       <div class="email-grid">
         <div class="email-left">
           <h3>
@@ -1660,24 +1927,32 @@
         </div>
 
         <div class="email-right reveal">
-          <div class="email-form-label">
-            <span data-en>Get Your Free Prompts Now</span>
-            <span data-te>మీ ఉచిత ప్రాంప్ట్లు ఇప్పుడు పొందండి</span>
-            <span data-kn>ನಿಮ್ಮ ಉಚಿತ ಪ್ರಾಂಪ್ಟ್‌ಗಳು ಈಗ ಪಡೆಯಿರಿ</span>
+          <div id="subForm">
+            <div class="email-form-label">
+              <span data-en>Get Your Free Prompts Now</span>
+              <span data-te>మీ ఉచిత ప్రాంప్ట్లు ఇప్పుడు పొందండి</span>
+              <span data-kn>ನಿಮ್ಮ ಉಚಿತ ಪ್ರಾಂಪ್ಟ್‌ಗಳು ಈಗ ಪಡೆಯಿರಿ</span>
+            </div>
+            <input class="email-field" type="text" id="sub-name" placeholder="Your name" autocomplete="name"/>
+            <input class="email-field" type="email" id="sub-email" placeholder="Your email address" autocomplete="email"/>
+            <input class="email-field" type="tel" id="sub-whatsapp" placeholder="WhatsApp number (optional)" autocomplete="tel"/>
+            <div class="email-error" id="subError"></div>
+            <button class="email-submit" id="subBtn" onclick="handleSubscribe()">
+              🎁
+              <span data-en>Send Me the Free Prompts</span>
+              <span data-te>ఉచిత ప్రాంప్ట్లు పంపండి</span>
+              <span data-kn>ಉಚಿತ ಪ್ರಾಂಪ್ಟ್‌ಗಳು ಕಳುಹಿಸಿ</span>
+            </button>
+            <div class="email-privacy">
+              <span data-en>No spam. Unsubscribe anytime. Your details stay with Ramya only.</span>
+              <span data-te>స్పామ్ లేదు. మీ వివరాలు రమ్యతో మాత్రమే ఉంటాయి.</span>
+              <span data-kn>ಸ್ಪ್ಯಾಮ್ ಇಲ್ಲ. ನಿಮ್ಮ ವಿವರಗಳು ರಮ್ಯಳ ಬಳಿ ಮಾತ್ರ ಇರುತ್ತದೆ.</span>
+            </div>
           </div>
-          <input class="email-field" type="text" id="sub-name" placeholder="Your name" autocomplete="name"/>
-          <input class="email-field" type="email" id="sub-email" placeholder="Your email address" autocomplete="email"/>
-          <input class="email-field" type="tel" id="sub-whatsapp" placeholder="WhatsApp number (optional)" autocomplete="tel"/>
-          <button class="email-submit" id="subBtn" onclick="handleSubscribe()">
-            🎁
-            <span data-en>Send Me the Free Prompts</span>
-            <span data-te>ఉచిత ప్రాంప్ట్లు పంపండి</span>
-            <span data-kn>ಉಚಿತ ಪ್ರಾಂಪ್ಟ್‌ಗಳು ಕಳುಹಿಸಿ</span>
-          </button>
-          <div class="email-privacy">
-            <span data-en>No spam. Unsubscribe anytime. Your details stay with Ramya only.</span>
-            <span data-te>స్పామ్ లేదు. మీ వివరాలు రమ్యతో మాత్రమే ఉంటాయి.</span>
-            <span data-kn>ಸ್ಪ್ಯಾಮ್ ಇಲ್ಲ. ನಿಮ್ಮ ವಿವರಗಳು ರಮ್ಯಳ ಬಳಿ ಮಾತ್ರ ಇರುತ್ತದೆ.</span>
+          <div class="email-success" id="subSuccess">
+            <div class="es-emoji">🎉</div>
+            <div class="es-title" id="subSuccessTitle">Thank you!</div>
+            <div class="es-text" id="subSuccessText"></div>
           </div>
         </div>
       </div>
@@ -1699,7 +1974,7 @@
             <div class="avatar-frame"></div>
             <div class="avatar-glow"></div>
             <div class="avatar-letter">R</div>
-            <div class="avatar-name-tag">SuRamya</div>
+            <div class="avatar-name-tag">SuRamiya</div>
           </div>
           <div class="about-badge">
             ICI Speaker<br/>QA Architect
@@ -1791,7 +2066,7 @@
           <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
-        <a href="https://wa.me/919945411489" target="_blank" rel="noopener">
+        <a href="https://wa.me/919945411489?text=Hi%20Ramya!%20I%20saw%20your%20website%20and%20I%20am%20interested%20in%20your%20AI%20prompt%20packs." target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           +91 99454 11489
         </a>
@@ -1801,6 +2076,30 @@
       </div>
     </div>
   </footer>
+
+  <!-- ── SCROLL TO TOP (Phase 2.5) ─────────────────────────────── -->
+  <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+
+  <!-- ── COMING-SOON NOTIFY MODAL (Phase 2.6) ──────────────────── -->
+  <div class="modal-overlay" id="notifyModal" onclick="if(event.target===this)closeNotifyModal()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeNotifyModal()" aria-label="Close">✕</button>
+      <div class="modal-emoji">🔔</div>
+      <div class="modal-title" id="notifyTitle">Be the first to know!</div>
+      <div class="modal-text" id="notifyText"></div>
+      <div id="notifyFormWrap">
+        <input class="email-field" type="email" id="notify-email" placeholder="Your email address" autocomplete="email"/>
+        <div class="email-error" id="notifyError"></div>
+        <button class="email-submit" id="notifyBtn" onclick="submitNotify()">
+          🔔
+          <span data-en>Notify Me</span>
+          <span data-te>నాకు తెలియజేయండి</span>
+          <span data-kn>ನನಗೆ ತಿಳಿಸಿ</span>
+        </button>
+      </div>
+      <div class="modal-success" id="notifySuccess"></div>
+    </div>
+  </div>
 
   <script>
     /* ─── LANGUAGE SWITCH ─────────────────────────────────────── */
@@ -1840,6 +2139,18 @@ Make it so memorable that every teacher wants to try it with their students the 
                       PROMPT_TEXT[typeIndex - 1] === '.' ? 120 :
                       Math.random() * 18 + 12;
         setTimeout(typeStep, delay);
+      } else {
+        // finished — wait 5s, fade out, reset, and type again (infinite loop)
+        setTimeout(() => {
+          typeTarget.style.transition = 'opacity 0.6s ease';
+          typeTarget.style.opacity = '0';
+          setTimeout(() => {
+            typeTarget.innerHTML = '<span class="plc-cursor"></span>';
+            typeIndex = 0;
+            typeTarget.style.opacity = '1';
+            setTimeout(typeStep, 500);
+          }, 600);
+        }, 5000);
       }
     }
     // start typing after 800ms
@@ -1873,43 +2184,158 @@ Make it so memorable that every teacher wants to try it with their students the 
       });
     }
 
-    /* ─── INSTAMOJO PLACEHOLDER ───────────────────────────────── */
+    function getLang() { return document.body.className.replace('lang-', '') || 'en'; }
+    function isValidEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+    /* ─── PAYMENT: VOICE MODULATION PPT (Phase 2.1) ───────────── */
+    // ▼▼▼ REPLACE THIS LINE WHEN INSTAMOJO IS READY: ▼▼▼
+    const INSTAMOJO_LINK = ""; // paste your Instamojo payment link here
+    // ▲▲▲ ------------------------------------------- ▲▲▲
     function showInstamojo() {
-      alert('Payment link coming soon! To buy today, WhatsApp Ramya directly. Contact details in the About section.');
+      if (INSTAMOJO_LINK) { window.open(INSTAMOJO_LINK, '_blank', 'noopener'); return; }
+      const go = confirm("Payment setup in progress!\n\nTo buy today, WhatsApp Ramya at +91 9945411489.\n\nClick OK to open WhatsApp now.");
+      if (go) {
+        const msg = encodeURIComponent("Hi Ramya! I want to buy the Voice Modulation PPT pack for ₹499. Please share the payment link.");
+        window.open("https://wa.me/919945411489?text=" + msg, "_blank", "noopener");
+      }
     }
 
-    /* ─── EMAIL SUBSCRIBE ─────────────────────────────────────── */
+    /* ─── DOWNLOAD: TOP TIER PROMPT PACK PDF (Phase 2.2) ──────── */
+    // ▼▼▼ REPLACE THIS LINE WHEN THE PDF DOWNLOAD LINK IS READY: ▼▼▼
+    const PROMPT_PACK_LINK = ""; // paste your Instamojo / PDF download link here
+    // ▲▲▲ ------------------------------------------------------ ▲▲▲
+    function showPromptPack() {
+      if (PROMPT_PACK_LINK) { window.open(PROMPT_PACK_LINK, '_blank', 'noopener'); return; }
+      const go = confirm("Payment setup in progress!\n\nTo buy the 5-prompt PDF pack today, WhatsApp Ramya at +91 9945411489.\n\nClick OK to open WhatsApp now.");
+      if (go) {
+        const msg = encodeURIComponent("Hi Ramya! I want to buy the Top Tier AI Prompt Pack (all 5 prompts) for ₹499. Please share the payment link.");
+        window.open("https://wa.me/919945411489?text=" + msg, "_blank", "noopener");
+      }
+    }
+
+    /* ─── EMAIL SUBSCRIBE (Phase 2.3) ─────────────────────────── */
+    const SUB_MSG = {
+      en: { name: 'Please enter your name.', email: 'Please enter a valid email address.',
+            dup: 'You are already subscribed! Check your email.', sending: '⏳ Sending...',
+            title: (n) => '🎉 Thank you ' + n + '!',
+            text: (e) => 'Your 5 free prompts are on the way. Ramya will send them to <b>' + e + '</b> within 24 hours.' },
+      te: { name: 'దయచేసి మీ పేరు నమోదు చేయండి.', email: 'దయచేసి సరైన ఇమెయిల్ నమోదు చేయండి.',
+            dup: 'మీరు ఇప్పటికే సబ్‌స్క్రైబ్ అయ్యారు! మీ ఇమెయిల్ చూడండి.', sending: '⏳ పంపుతోంది...',
+            title: (n) => '🎉 ధన్యవాదాలు ' + n + '!',
+            text: (e) => 'మీ 5 ఉచిత ప్రాంప్ట్లు వస్తున్నాయి. రమ్య వాటిని <b>' + e + '</b> కు 24 గంటల్లో పంపుతుంది.' },
+      kn: { name: 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರು ನಮೂದಿಸಿ.', email: 'ದಯವಿಟ್ಟು ಸರಿಯಾದ ಇಮೇಲ್ ನಮೂದಿಸಿ.',
+            dup: 'ನೀವು ಈಗಾಗಲೇ ಚಂದಾದಾರರಾಗಿದ್ದೀರಿ! ನಿಮ್ಮ ಇಮೇಲ್ ಪರಿಶೀಲಿಸಿ.', sending: '⏳ ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ...',
+            title: (n) => '🎉 ಧನ್ಯವಾದಗಳು ' + n + '!',
+            text: (e) => 'ನಿಮ್ಮ 5 ಉಚಿತ ಪ್ರಾಂಪ್ಟ್‌ಗಳು ಬರುತ್ತಿವೆ. ರಮ್ಯ ಅವುಗಳನ್ನು <b>' + e + '</b> ಗೆ 24 ಗಂಟೆಗಳಲ್ಲಿ ಕಳುಹಿಸುತ್ತಾರೆ.' }
+    };
+
     function handleSubscribe() {
-      const name = document.getElementById('sub-name').value.trim();
-      const email = document.getElementById('sub-email').value.trim();
+      const L = SUB_MSG[getLang()] || SUB_MSG.en;
+      const nameEl = document.getElementById('sub-name');
+      const emailEl = document.getElementById('sub-email');
+      const waEl = document.getElementById('sub-whatsapp');
+      const errEl = document.getElementById('subError');
       const btn = document.getElementById('subBtn');
+      const name = nameEl.value.trim();
+      const email = emailEl.value.trim();
 
-      if (!name) { alert('Please enter your name.'); return; }
-      if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+      nameEl.classList.remove('error'); emailEl.classList.remove('error');
+      errEl.classList.remove('show'); errEl.textContent = '';
 
-      // Build WhatsApp message to Ramya with subscriber details
-      const wa = document.getElementById('sub-whatsapp').value.trim();
+      if (!name) { nameEl.classList.add('error'); errEl.textContent = L.name; errEl.classList.add('show'); nameEl.focus(); return; }
+      if (!isValidEmail(email)) { emailEl.classList.add('error'); errEl.textContent = L.email; errEl.classList.add('show'); emailEl.focus(); return; }
+
+      let subs = [];
+      try { subs = JSON.parse(localStorage.getItem('subscribed_emails') || '[]'); } catch (e) { subs = []; }
+      if (subs.map(s => String(s).toLowerCase()).includes(email.toLowerCase())) {
+        emailEl.classList.add('error'); errEl.textContent = L.dup; errEl.classList.add('show'); return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = L.sending;
+
+      const wa = waEl.value.trim();
       const msg = encodeURIComponent(
-        `New subscriber for free prompts!\nName: ${name}\nEmail: ${email}${wa ? '\nWhatsApp: ' + wa : ''}`
+        'New subscriber for 5 free prompts!\nName: ' + name + '\nEmail: ' + email + (wa ? '\nWhatsApp: ' + wa : '')
       );
 
-      btn.classList.add('sent');
-      btn.innerHTML = '✓ Thank you! Check your WhatsApp / email shortly.';
-
-      // Open WhatsApp to notify Ramya
       setTimeout(() => {
-        window.open(`https://wa.me/919945411489?text=${msg}`, '_blank');
-      }, 800);
-
-      // Reset after 5s
-      setTimeout(() => {
-        btn.classList.remove('sent');
-        btn.innerHTML = '🎁 <span data-en>Send Me the Free Prompts</span>';
-        document.getElementById('sub-name').value = '';
-        document.getElementById('sub-email').value = '';
-        document.getElementById('sub-whatsapp').value = '';
-      }, 5000);
+        subs.push(email);
+        try { localStorage.setItem('subscribed_emails', JSON.stringify(subs)); } catch (e) {}
+        window.open('https://wa.me/919945411489?text=' + msg, '_blank', 'noopener');
+        document.getElementById('subForm').style.display = 'none';
+        document.getElementById('subSuccessTitle').textContent = L.title(name);
+        document.getElementById('subSuccessText').innerHTML = L.text(email);
+        document.getElementById('subSuccess').classList.add('show');
+      }, 700);
     }
+
+    /* ─── SCROLL TO TOP (Phase 2.5) ───────────────────────────── */
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) scrollTopBtn.classList.add('show');
+      else scrollTopBtn.classList.remove('show');
+    });
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+    /* ─── COMING-SOON NOTIFY MODAL (Phase 2.6) ────────────────── */
+    let notifyProfession = '';
+    const NOTIFY_TITLE = {
+      en: (p) => 'Be the first to know when the ' + p + ' pack launches!',
+      te: (p) => p + ' ప్యాక్ విడుదలైనప్పుడు మొదట తెలుసుకోండి!',
+      kn: (p) => p + ' ಪ್ಯಾಕ್ ಬಿಡುಗಡೆಯಾದಾಗ ಮೊದಲು ತಿಳಿಯಿರಿ!'
+    };
+    const NOTIFY_BODY = {
+      en: 'Enter your email and Ramya will personally reach out the moment this pack launches.',
+      te: 'మీ ఇమెయిల్ నమోదు చేయండి. ఈ ప్యాక్ విడుదలైన వెంటనే రమ్య మిమ్మల్ని సంప్రదిస్తుంది.',
+      kn: 'ನಿಮ್ಮ ಇಮೇಲ್ ನಮೂದಿಸಿ. ಈ ಪ್ಯಾಕ್ ಬಿಡುಗಡೆಯಾದ ತಕ್ಷಣ ರಮ್ಯ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತಾರೆ.'
+    };
+    const NOTIFY_DONE = {
+      en: '✅ You will be notified! Ramya will reach out personally.',
+      te: '✅ మీకు తెలియజేయబడుతుంది! రమ్య వ్యక్తిగతంగా సంప్రదిస్తుంది.',
+      kn: '✅ ನಿಮಗೆ ತಿಳಿಸಲಾಗುವುದು! ರಮ್ಯ ವೈಯಕ್ತಿಕವಾಗಿ ಸಂಪರ್ಕಿಸುತ್ತಾರೆ.'
+    };
+
+    function openNotifyModal(profession) {
+      notifyProfession = profession;
+      const lang = getLang();
+      document.getElementById('notifyTitle').textContent = (NOTIFY_TITLE[lang] || NOTIFY_TITLE.en)(profession);
+      document.getElementById('notifyText').textContent = NOTIFY_BODY[lang] || NOTIFY_BODY.en;
+      document.getElementById('notify-email').value = '';
+      document.getElementById('notify-email').classList.remove('error');
+      document.getElementById('notifyError').classList.remove('show');
+      document.getElementById('notifyFormWrap').style.display = 'block';
+      const succ = document.getElementById('notifySuccess');
+      succ.classList.remove('show'); succ.textContent = '';
+      document.getElementById('notifyModal').classList.add('show');
+    }
+    function closeNotifyModal() { document.getElementById('notifyModal').classList.remove('show'); }
+
+    function submitNotify() {
+      const L = SUB_MSG[getLang()] || SUB_MSG.en;
+      const emailEl = document.getElementById('notify-email');
+      const errEl = document.getElementById('notifyError');
+      const email = emailEl.value.trim();
+      emailEl.classList.remove('error'); errEl.classList.remove('show');
+      if (!isValidEmail(email)) { emailEl.classList.add('error'); errEl.textContent = L.email; errEl.classList.add('show'); return; }
+
+      let list = [];
+      try { list = JSON.parse(localStorage.getItem('notify_list') || '[]'); } catch (e) { list = []; }
+      list.push({ profession: notifyProfession, email: email });
+      try { localStorage.setItem('notify_list', JSON.stringify(list)); } catch (e) {}
+
+      const msg = encodeURIComponent('Hi Ramya! Please notify me when the ' + notifyProfession + ' prompt pack launches. My email: ' + email);
+      window.open('https://wa.me/919945411489?text=' + msg, '_blank', 'noopener');
+
+      document.getElementById('notifyFormWrap').style.display = 'none';
+      const succ = document.getElementById('notifySuccess');
+      succ.textContent = NOTIFY_DONE[getLang()] || NOTIFY_DONE.en;
+      succ.classList.add('show');
+      setTimeout(closeNotifyModal, 3500);
+    }
+
+    /* ─── ESC closes modal ────────────────────────────────────── */
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeNotifyModal(); });
 
     /* ─── SCROLL REVEAL ───────────────────────────────────────── */
     const revealObserver = new IntersectionObserver((entries) => {
